@@ -26,3 +26,5 @@
   * [Capítulo 7: Funciones integradas e iterables](tema-3.-programacion-estructurada-en-python/capitulo-7-funciones-integradas-e-iterables.md)
   * [Capítulo 8: Manejo de excepciones](tema-3.-programacion-estructurada-en-python/capitulo-8-manejo-de-excepciones.md)
   * [Capítulo 9: Estilo de código y PEP 8](tema-3.-programacion-estructurada-en-python/capitulo-9-estilo-de-codigo-y-pep-8.md)
+  * [Resumen Final](tema-3.-programacion-estructurada-en-python/resumen-final.md)
+* [Tema 4. Programación Modular en Python](tema-4.-programacion-modular-en-python.md)
