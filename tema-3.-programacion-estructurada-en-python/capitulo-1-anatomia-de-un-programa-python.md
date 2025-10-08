@@ -1,76 +1,31 @@
 # Capítulo 1: Anatomía de un programa Python
 
-Bienvenido al fascinante mundo de la programación estructurada en Python. En este primer capítulo, exploraremos la estructura fundamental que debe seguir todo programa Python profesional, desde la importación de librerías hasta la organización del código principal. Comprenderás por qué Python ha elegido la **indentación** como pilar de su sintaxis y cómo esto contribuye a crear código limpio, legible y mantenible.
+Al igual que la arquitectura de un edificio define su solidez y funcionalidad, la estructura de un programa informático determina su robustez, legibilidad y mantenibilidad a largo plazo. Un código bien organizado no es un lujo, sino una necesidad profesional. Este capítulo sienta las bases para escribir código Python de alta calidad, explorando la anatomía estándar de un script, desde la disposición de sus componentes hasta las reglas sintácticas, como la indentación, que lo gobiernan. Dominar estos conceptos es el primer paso para pasar de escribir código que funciona a escribir código profesional.
 
-### 1.1. Introducción: La importancia de la estructura
+### 1.1. La importancia de la estructura
 
-Todo programa Python exitoso comienza con una estructura bien definida. Al igual que un arquitecto no construiría una casa sin planos, un programador profesional nunca debe escribir código sin una estructura clara. La organización adecuada del código no solo facilita su lectura y comprensión, sino que también reduce errores, facilita el mantenimiento y mejora la colaboración en equipo.
+Un programa Python exitoso comienza con una estructura bien definida. La organización del código es crucial en el desarrollo profesional por varias razones fundamentales:
 
-Python, con su filosofía de "la legibilidad cuenta" (**readability counts**), ha diseñado un conjunto de convenciones que veremos reflejadas en todos los programas bien escritos.
+* **Facilita la lectura**: Un código estructurado es más fácil de entender para otros desarrolladores y para uno mismo en el futuro.
+* **Reduce errores**: Una lógica clara y ordenada minimiza la probabilidad de introducir errores sutiles (_bugs_).
+* **Simplifica el mantenimiento**: Cuando es necesario modificar o ampliar el programa, una buena estructura permite localizar y cambiar partes del código de forma segura y eficiente.
+* **Mejora la colaboración**: En un entorno de equipo, una estructura consistente permite que múltiples desarrolladores trabajen de manera cohesionada.
+
+Esta filosofía está en el corazón de Python, cuyo lema "_la legibilidad cuenta_" (_readability counts_) subraya que <mark style="background-color:$primary;">**el código se escribe una vez, pero se lee muchas veces**</mark>.
 
 ### 1.2. Estructura típica de un script Python
 
-Un programa Python típico sigue una estructura organizada que incluye estos elementos en orden:
+Un script de Python profesional sigue una secuencia lógica y ordenada para sus componentes. Esta organización no es arbitraria; mejora la claridad y previsibilidad del código.
 
-#### Importaciones de librerías
+1. <mark style="background-color:$primary;">**Importaciones de librerías**</mark>: Al principio del archivo, se declaran todas las dependencias externas que el programa necesita, como módulos de la biblioteca estándar o de terceros.
+2. <mark style="background-color:$primary;">**Definición de constantes**</mark>: A continuación, se definen los valores que se mantendrán fijos durante la ejecución. Por convención (PEP 8), sus nombres se escriben en mayúsculas (`UPPER_CASE`). Es importante señalar que Python no tiene un mecanismo de "constantes verdaderas"; esta es una convención para indicar al programador que el valor no debe ser modificado.
+3. <mark style="background-color:$primary;">**Definición de funciones**</mark>: Aquí se agrupa la lógica reutilizable del programa en bloques de código modulares. Cada función realiza una tarea específica.
+4. <mark style="background-color:$primary;">**Función principal**</mark>**&#x20;`main`**: Se considera el punto de partida lógico del programa. Encapsula el flujo principal de ejecución, orquestando las llamadas a otras funciones.
+5. <mark style="background-color:$primary;">**Punto de entrada**</mark>**&#x20;`if __name__ == "__main__":`**: Este es un bloque crucial y el pilar sobre el que se construye la modularidad en Python. Su propósito es doble:
+   * Permite que el script se ejecute directamente desde la terminal. El código dentro de este bloque solo se ejecuta cuando el archivo es el programa principal.
+   * Permite que el script sea importado como un módulo en otro programa sin que su código principal se ejecute automáticamente. Este mecanismo es fundamental para crear librerías y módulos reutilizables, permitiendo que un mismo archivo sirva tanto como un programa independiente como una pieza de un sistema más grande.
 
-```python
-import math
-import sys
-from datetime import datetime
-```
-
-Las importaciones se colocan al principio del archivo y organizan las dependencias externas que necesita nuestro programa.
-
-#### Definición de constantes
-
-```python
-PI = math.pi
-MAX_INTENTOS = 3
-NOMBRE_ARCHIVO = "datos.txt"
-```
-
-Las constantes se definen en **MAYÚSCULAS** por convención (PEP 8), aunque Python no tiene constantes verdaderas.
-
-#### Definición de funciones
-
-```python
-def calcular_area_circulo(radio):
-    """
-    Calcula el área de un círculo dado su radio.
-    
-    Args:
-        radio (float): El radio del círculo
-        
-    Returns:
-        float: El área del círculo
-    """
-    return PI * radio ** 2
-```
-
-#### Función principal (main)
-
-```python
-def main():
-    """Función principal del programa."""
-    try:
-        radio = float(input("Introduce el radio del círculo: "))
-        area = calcular_area_circulo(radio)
-        print(f"El área del círculo con radio {radio} es: {area}")
-    except ValueError:
-        print("Por favor, introduce un valor válido para el radio.")
-```
-
-#### Punto de entrada del programa
-
-```python
-if __name__ == "__main__":
-    main()
-```
-
-Este bloque garantiza que la función `main()` solo se ejecute cuando el archivo se ejecuta directamente, no cuando se importa como módulo.
-
-**Ejemplo completo:**
+A continuación se muestra un ejemplo completo que integra todos estos componentes:
 
 ```python
 import math
@@ -81,12 +36,12 @@ PI = math.pi
 def calcular_area_circulo(radio):
     """
     Calcula el área de un círculo dado su radio.
-    
+
     Args:
-        radio (float): El radio del círculo
-        
+        radio (float): El radio del círculo.
+
     Returns:
-        float: El área del círculo
+        float: El área del círculo.
     """
     return PI * radio ** 2
 
@@ -105,11 +60,11 @@ if __name__ == "__main__":
 
 ### 1.3. Indentación: El corazón de la sintaxis Python
 
-La **indentación** es la característica más distintiva de Python. A diferencia de otros lenguajes que usan llaves `{}` o palabras clave como `begin/end`, Python utiliza la indentación para delimitar bloques de código.
+La indentación es, sin duda, la característica más distintiva de la sintaxis de Python. A diferencia de otros lenguajes de programación que utilizan llaves `{}` o palabras clave como `begin`/`end` para delimitar bloques de código, Python utiliza los espacios en blanco. Esta decisión de diseño obliga a escribir código visualmente limpio y estructurado.
 
-#### Reglas fundamentales de indentación
+#### Las reglas fundamentales de la indentación
 
-**1. Obligatoriedad**: La indentación no es opcional en Python; es parte de la sintaxis.
+**Obligatoriedad**: La indentación no es una sugerencia de estilo, sino una parte integral de la sintaxis. Un bloque de código mal indentado producirá un `IndentationError`.
 
 ```python
 # Correcto
@@ -125,7 +80,7 @@ if edad >= 18:
 print("Es mayor de edad")  # IndentationError
 ```
 
-**2. Consistencia**: Todos los elementos del mismo bloque deben tener la misma indentación.
+**Consistencia**: Todas las líneas dentro de un mismo bloque de código deben tener exactamente el mismo nivel de indentación.
 
 ```python
 # Correcto
@@ -142,7 +97,7 @@ if condicion:
    instruccion_2()  # IndentationError
 ```
 
-**3. Jerarquía**: Los bloques anidados requieren niveles adicionales de indentación.
+**Jerarquía**: Los bloques de código anidados deben tener un nivel de indentación superior al del bloque que los contienen.
 
 ```python
 # Correcto: Indentación jerárquica
@@ -154,24 +109,16 @@ if numero > 0:
         print("Y es impar")
 ```
 
-#### Convención recomendada (PEP 8)
+La guía de estilo [**PEP 8**](https://peps.python.org/pep-0008/) establece las siguientes convenciones recomendadas:
 
-* **4 espacios por nivel de indentación**
-* **No mezclar espacios y tabuladores**
-* Configurar el editor para mostrar espacios en blanco
-
-```python
-# Recomendado: 4 espacios por nivel
-def funcion():
-    if condicion:
-        for elemento in lista:
-            if elemento > 0:
-                print(elemento)
-```
+* Usar **4 espacios** por cada nivel de indentación.
+* **Nunca mezclar espacios y tabuladores**, ya que pueden tener anchos diferentes y causar errores difíciles de depurar.
 
 #### Técnicas para líneas largas
 
-**Continuación con contrabarra `\`**:
+Para manejar líneas de código que superan el límite recomendado de 79 caracteres, existen dos técnicas:
+
+**Continuación con contrabarra `\`**: Permite dividir una instrucción en varias líneas.
 
 ```python
 condicion_compleja = condicion1 and condicion2 and \
@@ -179,14 +126,14 @@ condicion_compleja = condicion1 and condicion2 and \
                      condicion5
 ```
 
-**Continuación implícita en paréntesis**:
+**Continuación implícita**: Dentro de paréntesis `()`, corchetes `[]` o llaves `{}`, Python permite saltos de línea sin necesidad de una contrabarra, lo cual es más legible.
 
 ```python
 lista_dias = ["lunes", "martes", "miércoles", "jueves", 
               "viernes", "sábado", "domingo"]
 ```
 
-**Instrucciones de una línea**:
+Además, es posible omitir la indentación eliminando el salto de línea cuando solo se afecta a una única instrucción, como suele ocurrir en estructuras `if` sencillas. No obstante, se recomienda aplicar este recurso únicamente en fragmentos muy simples, ya que su uso excesivo puede restar claridad y dificultar la lectura del código.
 
 ```python
 # Permitido pero no recomendado para código complejo
@@ -195,11 +142,11 @@ if mostrar: print("¡Hola mundo!")
 
 ### 1.4. Comentarios y legibilidad
 
-Los comentarios son fragmentos de texto que no se ejecutan y sirven para documentar el código. Son esenciales para el trabajo en equipo y el mantenimiento a largo plazo.
+Los comentarios son fragmentos de texto dentro del código que el intérprete de Python ignora. Su propósito es documentar el código, explicar la lógica compleja y facilitar el trabajo en equipo y el mantenimiento futuro.
 
-#### Tipos de comentarios en Python
+Existen varios tipos de comentarios:
 
-**1. Comentarios de línea completa**:
+**De línea completa**: Ocupan toda una línea y comienzan con `#`. Se usan para explicar el bloque de código que sigue.
 
 ```python
 # Este es un comentario de línea completa
@@ -207,13 +154,13 @@ Los comentarios son fragmentos de texto que no se ejecutan y sirven para documen
 resultado = calcular_promedio(notas)
 ```
 
-**2. Comentarios inline**:
+_**Inline**_: Se colocan en la misma línea que una instrucción, también precedidos por `#`. Deben usarse con moderación para aclaraciones breves.
 
 ```python
 x = x + 1  # Incrementar contador de intentos
 ```
 
-**3. Comentarios de múltiples líneas**:
+**De múltiples líneas**: Se crean usando comillas triples (`"""` o `'''`). Aunque técnicamente son cadenas de texto, se usan comúnmente para comentarios largos o para desactivar temporalmente bloques de código.
 
 ```python
 """
@@ -223,46 +170,37 @@ comentar temporalmente bloques de código.
 """
 ```
 
-#### Docstrings: Documentación profesional
+#### **Docstrings**
 
-Los **docstrings** son comentarios especiales que documentan funciones, clases y módulos:
+Los <mark style="background-color:$primary;">**docstrings**</mark> son un tipo especial de comentario de múltiples líneas que se coloca como la primera instrucción en un módulo, función, clase o método. Son la forma profesional de documentar el código, ya que herramientas automáticas pueden extraerlos para generar documentación. Un docstring completo describe lo que hace el código, sus parámetros, lo que devuelve y los errores que puede lanzar.
 
 ```python
 def calcular_imc(peso, altura):
-    """
-    Calcula el Índice de Masa Corporal (IMC).
-    
-    El IMC se calcula dividiendo el peso (en kg) por el cuadrado 
+    """Calcula el Índice de Masa Corporal (IMC).
+
+    El IMC se calcula dividiendo el peso (en kg) por el cuadrado
     de la altura (en metros).
-    
+
     Args:
-        peso (float): Peso en kilogramos
-        altura (float): Altura en metros
-        
+        peso (float): Peso en kilogramos.
+        altura (float): Altura en metros.
+
     Returns:
-        float: El valor del IMC
-        
+        float: El valor del IMC.
+
     Raises:
-        ValueError: Si el peso o la altura son negativos o cero
-        
+        ValueError: Si el peso o la altura son negativos o cero.
+
     Examples:
         >>> calcular_imc(70, 1.75)
         22.857142857142858
     """
     if peso <= 0 or altura <= 0:
         raise ValueError("Peso y altura deben ser positivos")
-    
     return peso / (altura ** 2)
 ```
 
-#### Buenas prácticas para comentarios
-
-| ✅ Hacer                                | ❌ Evitar                         |
-| -------------------------------------- | -------------------------------- |
-| **Explicar el "por qué"**, no el "qué" | Comentarios obvios               |
-| **Mantener comentarios actualizados**  | Comentarios desactualizados      |
-| **Usar lenguaje claro y conciso**      | Comentarios excesivamente largos |
-| **Comentar código complejo**           | Sobre-comentar código simple     |
+La clave para escribir buenos comentarios es explicar el "porqué" (la intención) y no el "qué" (la acción obvia).
 
 ```python
 # ✅ Buen comentario
@@ -274,20 +212,19 @@ precio_final = precio_base * 0.9
 precio_final = precio_base * 0.9
 ```
 
-### 1.5. Entrada, proceso y salida (modelo IPO)
+### 1.5. El modelo IPO (Input-Process-Output)
 
-El **modelo IPO** (Input-Process-Output) es un patrón fundamental en programación que estructura la lógica de cualquier programa:
+El **modelo IPO** (Entrada-Proceso-Salida) es un patrón fundamental para estructurar la lógica de un programa o de una función. Propone dividir el código en tres fases claras y distintas, similar a una receta de cocina: los ingredientes son la _entrada_, el acto de cocinar es el _proceso_, y el plato final es la _salida_.
 
-1. **Input (Entrada)**: Recopilar datos del usuario, archivos, bases de datos, etc.
-2. **Process (Proceso)**: Transformar, calcular o manipular los datos de entrada
-3. **Output (Salida)**: Presentar los resultados al usuario, guardarlos en archivos, etc.
+1. **Entrada (Input)**: Recopilar los datos necesarios. Esto puede implicar leer datos del teclado, un archivo, una base de datos o una red.
+2. **Proceso (Process)**: Manipular los datos de entrada. Aquí se realizan los cálculos, transformaciones y la lógica principal del programa.
+3. **Salida (Output)**: Presentar los resultados. Esto puede ser mostrar información en pantalla, guardarla en un archivo o enviarla a otro sistema.
 
-#### Implementación del modelo IPO
+El siguiente ejemplo de una calculadora simple ilustra este modelo, con comentarios que delimitan cada fase:
 
 ```python
 def programa_calculadora():
     """Implementa una calculadora básica usando el modelo IPO."""
-    
     # === ENTRADA (INPUT) ===
     print("=== Calculadora Básica ===")
     try:
@@ -297,7 +234,7 @@ def programa_calculadora():
     except ValueError:
         print("Error: Debes introducir números válidos")
         return
-    
+
     # === PROCESO (PROCESS) ===
     if operador == "+":
         resultado = numero1 + numero2
@@ -314,27 +251,27 @@ def programa_calculadora():
     else:
         print("Error: Operador no válido")
         return
-    
+
     # === SALIDA (OUTPUT) ===
     print(f"Resultado: {numero1} {operador} {numero2} = {resultado}")
 ```
 
-#### Ventajas del modelo IPO
+Adoptar el modelo IPO ofrece varias ventajas:
 
-* **Claridad conceptual**: Separa responsabilidades de manera lógica
-* **Fácil depuración**: Puedes probar cada fase por separado
-* **Reutilización**: Las funciones de procesamiento pueden reutilizarse
-* **Mantenibilidad**: Cambios en una fase no afectan necesariamente las otras
+* **Claridad**: Separa las responsabilidades de forma lógica.
+* **Fácil depuración**: Permite probar cada fase de forma aislada.
+* **Reutilización**: La lógica del proceso puede ser empaquetada en funciones y reutilizada.
+* **Mantenibilidad**: Los cambios en la entrada o la salida no afectan necesariamente al proceso.
 
-### 1.6. El shebang y ejecución de scripts
+### 1.6. El _shebang_ y ejecución de scripts
 
-En sistemas Unix/Linux, puedes hacer que tu script Python sea ejecutable añadiendo una línea **shebang** al principio:
+En sistemas operativos tipo Unix (como Linux o macOS), la línea _<mark style="background-color:$primary;">**shebang**</mark>_ es la primera línea de un script e indica al sistema qué intérprete debe usar para ejecutarlo. Para Python 3, se suele usar:
 
 ```python
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+
 """
-Script de ejemplo con shebang y codificación.
+Script de ejemplo con shebang.
 """
 
 def main():
@@ -344,16 +281,19 @@ if __name__ == "__main__":
     main()
 ```
 
-Esto permite ejecutar el script directamente:
+Para que funcione, primero hay que dar permisos de ejecución al archivo y luego se puede ejecutar directamente desde la terminal:
 
 ```bash
+# Dar permisos de ejecución
 chmod +x mi_script.py
+
+# Ejecutar el script
 ./mi_script.py
 ```
 
 ### Resumen del Capítulo
 
-En este capítulo has aprendido los fundamentos de la estructura de un programa Python profesional. La indentación obligatoria, el uso apropiado de comentarios y docstrings, y la aplicación del modelo IPO son los pilares sobre los que construirás programas robustos y mantenibles.
+En este capítulo hemos sentado las bases de la programación estructurada en Python. La indentación, una estructura clara y una buena documentación son los pilares sobre los que construiremos programas robustos. Ahora que entendemos cómo organizar el código, el siguiente paso es explorar los datos que estos programas manipulan.
 
 #### 💡 Conceptos Clave:
 
@@ -369,3 +309,5 @@ En este capítulo has aprendido los fundamentos de la estructura de un programa 
 2. ¿Qué ventajas aporta el patrón `if __name__ == "__main__":` en el desarrollo de módulos reutilizables?
 3. ¿Cómo pueden los docstrings bien escritos mejorar la colaboración en equipos de desarrollo?
 4. Describe una situación real donde el modelo IPO te ayudaría a estructurar mejor un programa.
+
+***

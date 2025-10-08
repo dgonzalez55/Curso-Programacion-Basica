@@ -2,7 +2,7 @@
 
 ### Tabla de Contenidos
 
-#### 🪚 [Capítulo 1: Anatomía de un programa Python](capitulo-1-anatomia-de-un-programa-python.md)
+#### 🪚 [Capítulo 1: Anatomía de un programa Python](broken-reference)
 
 * 1.1. Introducción: La importancia de la estructura
 * 1.2. Estructura típica de un script Python
