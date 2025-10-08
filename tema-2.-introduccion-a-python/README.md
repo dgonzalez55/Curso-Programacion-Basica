@@ -15,7 +15,7 @@
 * 2.2. Instalación en diferentes sistemas operativos
 * 2.3. Configuración del PATH y verificación
 
-#### 📦 [Capítulo 3: Gestión de paquetes y entornos virtuale](capitulo-3-gestion-de-paquetes-y-entornos-virtuales.md)s
+#### 📦 [Capítulo 3: Gestión de paquetes y entornos virtuales](capitulo-3-gestion-de-paquetes-y-entornos-virtuales.md)
 
 * 3.1. PyPI y pip: el ecosistema de paquetes
 * 3.2. Operaciones básicas con pip

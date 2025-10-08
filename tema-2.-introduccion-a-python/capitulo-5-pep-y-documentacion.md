@@ -1,182 +1,124 @@
 # Capítulo 5: PEP y documentación
 
-### 5.1. Python Enhancement Proposals (PEP)
+### Introducción al Capítulo
 
-Los **Python Enhancement Proposals (PEP)** son documentos de diseño que proporcionan información a la comunidad Python o describen nuevas características, procesos o entornos relacionados con el lenguaje.
+El desarrollo de software es una disciplina inherentemente colaborativa. Es un hecho conocido que **el código se lee muchas más veces de las que se escribe**, ya sea por tus compañeros de equipo, por tu "yo" del futuro o por cualquiera que necesite mantener tu programa. Por esta razón, escribir código que sea claro y comprensible es tan importante como escribir código que funcione. En este capítulo, exploraremos los estándares y las herramientas que la comunidad Python ha creado para garantizar la calidad, la legibilidad y la mantenibilidad del código.
 
-**Tipos de PEP**:
+### **5.1. Python Enhancement Proposals (PEP)**
 
-**PEP de estándares**: Proponen cambios que afectan la implementación del lenguaje, su sintaxis o bibliotecas estándar.
+Los [**Python Enhancement Proposals (PEP)**](https://peps.python.org/) son los documentos de diseño que guían la evolución del lenguaje Python.
 
-**PEP informativos**: Proporcionan información general, directrices o recomendaciones para la comunidad de desarrolladores.
+<mark style="background-color:yellow;">**Analogía**</mark>: Piensa en los PEPs como las "**propuestas de ley**" de la comunidad Python. Cualquier cambio significativo, desde una nueva característica de sintaxis hasta una guía de estilo, se propone, discute y documenta en un PEP, asegurando que el lenguaje evolucione de una manera ordenada, transparente y consensuada.
 
-**PEP de proceso**: Describen procesos relacionados con Python, como la propia propuesta y revisión de PEPs.
+Existen varios tipos de PEP:
 
-**PEPs más importantes**:
+* **PEP de Estándares**: Proponen nuevas características o cambios en la implementación del lenguaje.
+* **PEP Informativos**: Proporcionan directrices o recomendaciones a la comunidad, sin proponer cambios en el lenguaje en sí.
+* **PEP de Proceso**: Describen los procesos que rodean a Python, como el propio sistema de PEPs.
 
-* **PEP 1**: Proceso de propuesta y formato de PEPs
-* **PEP 8**: Guía de estilo para código Python (el más conocido)
-* **PEP 20**: El Zen de Python
-* **PEP 484**: Anotaciones de tipo (Type Hints)
-* **PEP 572**: Expresiones de asignación (walrus operator `:=`)
+Algunos de los PEPs más importantes son:
 
-### 5.2. PEP 8: guía de estilo oficial
+* [**PEP 1**](https://peps.python.org/pep-0001/): Define qué es un PEP y cómo es el proceso para proponerlos.
+* [**PEP 8**](https://peps.python.org/pep-0008/): La guía de estilo oficial para el código Python.
+* [**PEP 20**](https://peps.python.org/pep-0020/): El Zen de Python, la filosofía del lenguaje.
+* [**PEP 484**](https://peps.python.org/pep-0484/): Introduce las anotaciones de tipo (Type Hints).
 
-**PEP 8** es la guía de estilo oficial para código Python. Define convenciones para escribir código Python de manera coherente y legible. Su cumplimiento es fundamental para proyectos profesionales.
+### **5.2. PEP 8: guía de estilo oficial**
 
-**Aspectos clave del PEP 8**
+**PEP 8** es la guía de estilo que dicta cómo formatear el código Python. En un entorno profesional, seguir el PEP 8 **no es opcional**. Es la base que permite que equipos enteros de desarrolladores escriban código con un estilo consistente, haciéndolo universalmente legible y fácil de mantener.
 
-**Indentación**:
+Aquí están algunas de las reglas más importantes:
 
-* Utilizar 4 espacios por cada nivel de indentación
-* No mezclar espacios y tabulaciones
-* Los editores deben configurarse para mostrar espacios en blanco
+* <mark style="background-color:$primary;">**Indentación**</mark>
+  * **Porqué**: La indentación define la estructura lógica del código en Python.
+  * **Regla**: Usa 4 espacios por nivel de indentación. No uses tabuladores.
+* <mark style="background-color:$primary;">**Longitud de línea**</mark>
+  * **Porqué**: Limitar la longitud de las líneas a 79 caracteres facilita la lectura y permite ver varios archivos de código uno al lado del otro, algo muy común al comparar cambios (diffs).
+  * **Regla**: Líneas de código de máximo 79 caracteres. Comentarios y docstrings de máximo 72.
+* <mark style="background-color:$primary;">**Líneas en blanco**</mark>
+  * **Porqué**: Ayudan a organizar visualmente el código y a separar bloques lógicos.
+  * **Reglas**:
+    * Usa dos líneas en blanco para separar funciones y clases a nivel de módulo.
+    * Usa una línea en blanco para separar métodos dentro de una clase.
+* <mark style="background-color:$primary;">**Importaciones**</mark>
+  * **Porqué**: Las importaciones en líneas separadas son más claras y facilitan la gestión de dependencias.
+  * **Regla**: Cada importación debe ir en su propia línea.
+* <mark style="background-color:$primary;">**Nomenclatura**</mark>
+  * **Porqué**: Un sistema de nombres consistente hace que el código sea autoexplicativo.
+  * **Reglas**:
+    * `snake_case` para variables y funciones (minúsculas con guiones bajos).
+    * `PascalCase` para clases (primera letra de cada palabra en mayúscula).
+    * `UPPER_CASE` para constantes.
+* <mark style="background-color:$primary;">**Espacios en operadores**</mark>
+  * **Porqué**: Mejora la legibilidad al separar visualmente los componentes de una expresión.
+  * **Regla**: Usa espacios alrededor de los operadores aritméticos (`=`, `+`, `-`, `*`, `/`) y de comparación (`==`, `!=`, `<`, `>`).
+* <mark style="background-color:$primary;">**Comentarios**</mark>
+  * **Porqué**: Los buenos comentarios explican el _porqué_ del código, no el _qué_.
+  * **Reglas**:
+    * Deben ser oraciones completas y mantenerse actualizados.
+    * Empiezan con `#` seguido de un espacio.
+    * Evita comentarios obvios que no aportan valor.
 
-**Longitud de línea**:
+### **5.3. Recursos de documentación y comunidad**
 
-* Mantener las líneas de código por debajo de 79 caracteres
-* Para comentarios y docstrings: máximo 72 caracteres
-* Usar continuación de línea con `\` o paréntesis cuando sea necesario
+Saber dónde encontrar respuestas es una de las habilidades más importantes de un programador.
 
-**Espacios en operadores**:
+#### Documentación Oficial&#x20;
 
-```python
-# Correcto
-x = y + z
-spam(ham[1], {eggs: 2})
-i = i + 1
+El recurso más fiable y completo es siempre la documentación oficial en [docs.python.org](https://docs.python.org/). Contiene el tutorial oficial, la referencia completa del lenguaje y la documentación de toda la biblioteca estándar.
 
-# Incorrecto
-x=y+z
-spam( ham[ 1 ], { eggs : 2 } )
-i=i+1
-```
+#### Herramientas Integradas&#x20;
 
-**Nomenclatura**:
+Python incluye herramientas para obtener ayuda directamente desde el intérprete interactivo:
 
-* **Variables y funciones**: `snake_case` (minúsculas con guiones bajos)
-* **Constantes**: `UPPER_CASE` (mayúsculas con guiones bajos)
-* **Clases**: `PascalCase` (primera letra de cada palabra en mayúscula)
-* **Módulos**: nombres cortos en minúsculas
+* `help()`: Muestra la documentación de cualquier objeto, función o módulo.
+* `dir()`: Lista todos los atributos y métodos de un objeto.
 
-```python
-# Correcto
-def calcular_area_circulo(radio):
-    PI = 3.14159
-    return PI * radio ** 2
+#### Docstrings: Documentando tu propio código&#x20;
 
-class CalculadoraGeometrica:
-    pass
-```
-
-**Líneas en blanco**:
-
-* 2 líneas en blanco antes de definiciones de clase y función a nivel de módulo
-* 1 línea en blanco antes de definiciones de método dentro de clases
-* Usar líneas en blanco para separar grupos de funciones relacionadas
-
-**Importaciones**:
-
-```python
-# Correcto: importaciones separadas
-import os
-import sys
-from subprocess import Popen, PIPE
-
-# Incorrecto: importaciones múltiples en una línea
-import sys, os
-```
-
-**Comentarios**:
-
-* Los comentarios deben ser oraciones completas
-* Usar # seguido de un espacio
-* Mantener comentarios actualizados con el código
-* Evitar comentarios obvios
-
-```python
-# Correcto: comentario útil
-x = x + 1  # Incrementar contador de reintentos
-
-# Incorrecto: comentario obvio
-x = x + 1  # Sumar 1 a x
-```
-
-### 5.3. Recursos de documentación y comunidad
-
-**Documentación oficial**
-
-**docs.python.org**: La documentación oficial de Python es el recurso más completo y actualizado:
-
-* Tutorial oficial para principiantes
-* Referencia completa del lenguaje
-* Biblioteca estándar documentada
-* Guías de instalación y configuración
-
-**Herramientas de documentación integradas**
-
-**Función help()**:
-
-```python
-help(str.upper)  # Documentación de método
-help(print)      # Documentación de función
-```
-
-**Función dir()**:
-
-```python
-dir(str)  # Lista todos los métodos disponibles para strings
-dir()     # Lista variables en el ámbito actual
-```
-
-**Docstrings**: Documentación integrada en el código
+Un "**docstring**" es una cadena de texto que aparece como la primera declaración en un módulo, función, clase o método. Se convierte en el atributo `__doc__` de ese objeto y es lo que la función `help()` muestra. Documentar tu código es una práctica fundamental.
 
 ```python
 def calcular_area(base, altura):
-    """
-    Calcula el área de un rectángulo.
-    
+    """Calcula el área de un rectángulo.
+
+    Esta función toma la base y la altura de un rectángulo y
+    devuelve su área calculada.
+
     Args:
         base (float): La base del rectángulo.
         altura (float): La altura del rectángulo.
-    
+
     Returns:
-        float: El área del rectángulo.
+        float: El área calculada del rectángulo.
     """
     return base * altura
 ```
 
-**Recursos de la comunidad**
+#### Recursos de la Comunidad
 
-**Stack Overflow**: La plataforma más utilizada para preguntas y respuestas sobre programación en Python.
-
-**Reddit**: Comunidades como r/Python y r/learnpython para discusiones y aprendizaje.
-
-**Python.org**: Sitio oficial con noticias, eventos y recursos educativos.
-
-**PyPI**: Repositorio de paquetes con documentación de cada librería.
-
-**GitHub**: Código fuente de proyectos Python y ejemplos prácticos.
-
-**Real Python**: Tutoriales avanzados y artículos técnicos.
-
-**Python Software Foundation (PSF)**: Organización que supervisa el desarrollo de Python y organiza eventos como PyCon.
+* [**Stack Overflow**](https://stackoverflow.com/questions/tagged/python): El mejor lugar para encontrar soluciones a problemas de programación específicos.
+* [**Real Python**](https://realpython.com/): Ofrece tutoriales y artículos de alta calidad, desde nivel principiante hasta avanzado.
+* [**GitHub**](https://github.com/topics/python): Permite explorar el código fuente de miles de proyectos Python, una excelente forma de aprender de ejemplos reales.
+* [**Python.org**](https://www.python.org/)**:** El sitio oficial de la comunidad, con noticias, eventos y recursos educativos.
 
 ### Resumen del Capítulo
 
-Los PEP son documentos fundamentales que guían la evolución de Python, siendo PEP 8 el más importante para desarrolladores. La documentación oficial y los recursos de la comunidad proporcionan el soporte necesario para el aprendizaje continuo y la resolución de problemas.
+Escribir código profesional va más allá de hacerlo funcionar. Implica adherirse a estándares que garantizan su legibilidad y mantenibilidad. Los PEP, y en especial la guía de estilo PEP 8, son la base de la colaboración en el ecosistema Python. Complementado con una buena documentación (como los docstrings) y el conocimiento de los recursos de la comunidad, un desarrollador puede escribir código de alta calidad y encontrar ayuda eficientemente cuando la necesite.
 
-#### **💡 Conceptos Clave:**
+#### 💡 Conceptos Clave:
 
-* **PEP**: Propuestas de mejora que guían el desarrollo de Python
-* **PEP 8**: Guía de estilo oficial obligatoria para código profesional
-* **Documentación oficial**: Recurso más completo y actualizado
-* **Herramientas integradas**: `help()`, `dir()`, docstrings
+* **PEP (Python Enhancement Proposal)**: Documentos que guían el desarrollo y los estándares de Python.
+* **PEP 8**: La guía de estilo oficial, de seguimiento obligatorio en entornos profesionales para garantizar la legibilidad y consistencia del código.
+* **Docstrings**: Cadenas de documentación integradas en el código que explican el propósito de funciones, clases y módulos.
+* **Documentación Oficial**: El recurso principal y más fiable para aprender sobre el lenguaje y su biblioteca estándar.
 
-#### **🤔 Preguntas de Reflexión:**
+#### 🤔 Preguntas de Reflexión:
 
-1. ¿Por qué es importante seguir las convenciones de PEP 8 en proyectos colaborativos?
-2. ¿Cómo pueden los docstrings mejorar la mantenibilidad del código?
-3. ¿Qué papel juega la comunidad Python en el ecosistema del lenguaje?
+1. ¿Por qué crees que un estándar de estilo como PEP 8 es más importante en lenguajes como Python, donde la indentación afecta la lógica del programa?
+2. Si te unes a un nuevo proyecto y encuentras una función sin docstring, ¿cuáles son los primeros pasos que darías para entender qué hace?
+3. ¿Qué beneficios directos para un equipo de desarrollo tiene la práctica de que todos sigan el mismo estándar de código?
+
+Hemos completado el recorrido por la configuración de un entorno profesional. Ahora, es momento de hacer un balance de todo lo aprendido.
 
 ***
