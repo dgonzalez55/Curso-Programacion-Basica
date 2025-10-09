@@ -1,14 +1,12 @@
 # Capítulo 4: Entrada y salida de datos
 
-La comunicación entre el programa y el usuario es fundamental en cualquier aplicación. Python proporciona funciones integradas simples pero potentes para gestionar tanto la **entrada de datos** (lo que el usuario introduce) como la **salida de datos** (lo que el programa muestra). En este capítulo exploraremos las funciones `input()` y `print()`, técnicas de formateo avanzado, conversión de tipos, y buenas prácticas para crear interfaces de usuario claras e intuitivas.
+La comunicación entre un programa y el usuario es el pilar de cualquier aplicación interactiva. Sin la capacidad de **recibir datos** y **mostrar resultados**, un programa sería una caja negra aislada. Python proporciona dos funciones integradas, **`input()`** y **`print()`**, que actúan como las herramientas clave para gestionar esta comunicación a través de la consola, permitiendo un diálogo fluido y efectivo.
 
-La gestión adecuada de entrada y salida no solo hace que nuestros programas sean funcionales, sino también profesionales y fáciles de usar.
+### 4.1. Función `input()`: lectura de datos
 
-### 4.1. Función input(): lectura de datos
+La función **`input()`** es el mecanismo principal para obtener datos del usuario durante la ejecución del programa. Su funcionamiento es simple pero tiene una característica fundamental que siempre debe tenerse en cuenta: <mark style="background-color:yellow;">**siempre devuelve una cadena de texto (**</mark><mark style="background-color:yellow;">**`str`**</mark><mark style="background-color:yellow;">**)**</mark>, sin importar lo que el usuario escriba.
 
-La función **`input()`** es la herramienta principal para recopilar información del usuario durante la ejecución del programa. Esta función siempre devuelve una **cadena de texto (string)**, independientemente de lo que el usuario introduzca.
-
-#### Sintaxis básica de input()
+#### Sintaxis básica de `input()`
 
 ```python
 variable = input("Mensaje para el usuario: ")
@@ -57,9 +55,7 @@ descripcion = input()
 print(f"Gracias por compartir: {descripcion}")
 ```
 
-#### Problemas comunes y soluciones
-
-**Problema**: Usuario introduce espacios al principio o final
+💡Un <mark style="background-color:$warning;">**problema común**</mark> es que los usuarios pueden introducir **espacios en blanco al principio o al final** de su respuesta. Esto se puede solucionar fácilmente usando el método **`.strip()`** para limpiar la cadena de entrada.
 
 ```python
 # ❌ Problema: espacios no deseados
@@ -71,119 +67,44 @@ nombre = input("Tu nombre: ").strip()
 print(f"Hola '{nombre}'")     # Hola 'Ana'
 ```
 
-**Problema**: Entrada vacía
+### 4.2. Conversión de tipos en la entrada
+
+Dado que `input()` devuelve una cadena, si necesitamos realizar operaciones numéricas, es imprescindible convertir el valor a un tipo de dato apropiado, como `int` (entero) o `float` (decimal).
 
 ```python
-# ❌ Sin validación
-nombre = input("Tu nombre: ")
-if nombre == "":
-    print("No has introducido nada")
-
-# ✅ Con validación mejorada
-nombre = input("Tu nombre: ").strip()
-if not nombre:  # Más pythónico
-    print("El nombre no puede estar vacío")
-else:
-    print(f"Hola, {nombre}")
-```
-
-### 4.2. Conversión de tipos a la entrada
-
-Dado que `input()` siempre devuelve strings, necesitamos convertir los datos al tipo apropiado para poder operar con ellos.
-
-#### Conversiones básicas
-
-**Convertir a entero (int)**
-
-```python
-# Conversión básica
+# Convertir a entero
 edad_str = input("¿Cuántos años tienes? ")
 edad = int(edad_str)
-print(f"En 10 años tendrás {edad + 10} años")
+print(f"El próximo año tendrás {edad + 1} años.")
 
-# Conversión directa (más común)
-edad = int(input("¿Cuántos años tienes? "))
-print(f"En 10 años tendrás {edad + 10} años")
+# Convertir a decimal (más común hacerlo en una sola línea)
+precio = float(input("Introduce el precio del producto: "))
+precio_con_iva = precio * 1.21
 ```
 
-**Convertir a decimal (float)**
-
-```python
-# Para números con decimales
-precio = float(input("¿Cuál es el precio del producto? "))
-descuento = float(input("¿Qué descuento aplicar (0-100)? "))
-
-precio_final = precio * (1 - descuento / 100)
-print(f"El precio final es: {precio_final:.2f}€")
-```
-
-**Convertir a booleano (bool)**
-
-```python
-# Conversión a booleano (cuidado: casi todo es True en Python)
-respuesta = bool(input("¿Estás de acuerdo? (escribe algo para sí): "))
-print(f"Tu respuesta es: {respuesta}")
-
-# Mejor: conversión personalizada
-def convertir_a_booleano(texto):
-    texto = texto.lower().strip()
-    return texto in ['si', 'sí', 'yes', 'y', 'true', '1']
-
-respuesta_str = input("¿Estás de acuerdo? (sí/no): ")
-respuesta = convertir_a_booleano(respuesta_str)
-print(f"Tu respuesta es: {respuesta}")
-```
-
-#### Manejo de errores en conversiones
-
-```python
-# ❌ Sin manejo de errores (puede fallar)
-edad = int(input("Tu edad: "))  # Error si el usuario introduce "veinte"
-
-# ✅ Con manejo de errores
-def solicitar_edad():
-    while True:
-        try:
-            edad = int(input("Tu edad: "))
-            if edad < 0:
-                print("La edad no puede ser negativa")
-                continue
-            return edad
-        except ValueError:
-            print("Por favor, introduce un número válido")
-
-edad = solicitar_edad()
-print(f"Tienes {edad} años")
-```
-
-#### Función auxiliar para entrada segura
+Esta conversión puede fallar. Si el usuario introduce texto en lugar de un número, el programa se detendrá con un error `ValueError`. La forma robusta y profesional de manejar esta situación es utilizando una **estructura `try-except`**. Para facilitar esta tarea, podemos crear una función auxiliar reutilizable.
 
 ```python
 def input_numerico(mensaje, tipo=int, minimo=None, maximo=None):
     """
     Solicita entrada numérica con validación.
-    
     Args:
         mensaje (str): Mensaje a mostrar al usuario
         tipo (type): int o float
         minimo (number): Valor mínimo permitido
         maximo (number): Valor máximo permitido
-    
     Returns:
         number: El número validado del tipo especificado
     """
     while True:
         try:
             valor = tipo(input(mensaje))
-            
             if minimo is not None and valor < minimo:
                 print(f"El valor debe ser mayor o igual a {minimo}")
                 continue
-                
             if maximo is not None and valor > maximo:
                 print(f"El valor debe ser menor o igual a {maximo}")
                 continue
-                
             return valor
         except ValueError:
             tipo_nombre = "entero" if tipo == int else "decimal"
@@ -194,11 +115,15 @@ edad = input_numerico("Tu edad (0-120): ", int, 0, 120)
 salario = input_numerico("Tu salario: ", float, 0)
 ```
 
-### 4.3. Función print(): escritura y formateo
+### 4.3. Función `print()`: escritura y formateo
 
-La función **`print()`** es mucho más versátil de lo que parece inicialmente. Permite mostrar información de múltiples formas y con gran control sobre el formato.
+La función **`print()`** es la herramienta estándar para mostrar información en la consola. Es más versátil de lo que parece, gracias a sus parámetros opcionales:
 
-#### Sintaxis y parámetros de print()
+* <mark style="background-color:$primary;">**Múltiples valores**</mark>: Se pueden pasar varios argumentos separados por comas, y `print()` los mostrará en una misma línea.
+* <mark style="background-color:$primary;">**Parámetro**</mark><mark style="background-color:$primary;">**&#x20;**</mark><mark style="background-color:$primary;">**`sep`**</mark>: Permite personalizar el separador que se utiliza entre los argumentos (por defecto es un espacio).
+* <mark style="background-color:$primary;">**Parámetro**</mark><mark style="background-color:$primary;">**&#x20;**</mark><mark style="background-color:$primary;">**`end`**</mark>: Permite cambiar el carácter que se añade al final de la línea (por defecto es un salto de línea `\n`).
+
+#### Sintaxis y parámetros de `print()`
 
 ```python
 print(*values, sep=' ', end='\n', file=sys.stdout, flush=False)
@@ -255,37 +180,22 @@ for i in range(1, 6):
 print("¡Terminado!")
 ```
 
-#### Ejemplos prácticos avanzados
+***
 
-```python
-# Separador para secciones
-def imprimir_separador(titulo, caracter="=", longitud=50):
-    print(caracter * longitud)
-    print(f"{titulo:^{longitud}}")  # Centrado
-    print(caracter * longitud)
+### 4.4. Formateo avanzado de cadenas con f-strings
 
-imprimir_separador("DATOS DEL USUARIO")
+A partir de Python 3.6, las <mark style="background-color:$primary;">**f-strings**</mark> (cadenas literales formateadas) se han convertido en el método preferido para formatear cadenas. Son legibles, concisas y potentes. Se definen prefijando la cadena con la letra `f` o `F`.
 
-# Tabular información
-productos = [
-    ("Laptop", 899.99, 5),
-    ("Mouse", 25.50, 15),
-    ("Teclado", 75.00, 8)
-]
+Las f-strings permiten:
 
-print("INVENTARIO")
-print("-" * 40)
-for nombre, precio, stock in productos:
-    print(f"{nombre:<15} {precio:>8.2f}€ {stock:>5} unidades")
-```
+* **Incrustar variables y expresiones** directamente dentro de llaves `{}`.
+* **Formatear números** con gran precisión.
+* **Alinear y rellenar** el texto.
+* **Usar separadores de miles** para mejorar la legibilidad de números grandes.
 
-### 4.4. Formateo avanzado de strings
+Aunque existen métodos más antiguos como `.format()` y el operador `%`, las <mark style="background-color:$primary;">**f-strings son la opción recomendada**</mark> para todo código nuevo por su claridad y eficiencia.
 
-Python ofrece múltiples formas de formatear cadenas de texto. La más moderna y recomendada son las **f-strings** (formatted string literals).
-
-#### F-strings (Python 3.6+) - Recomendado
-
-**Sintaxis básica**
+#### **Sintaxis básica**
 
 ```python
 nombre = "Ana"
@@ -300,7 +210,7 @@ print(f"El próximo año tendré {edad + 1} años")
 print(f"Mi nombre en mayúsculas: {nombre.upper()}")
 ```
 
-**Formateo numérico**
+#### **Formateo numérico**
 
 ```python
 numero = 666
@@ -318,7 +228,7 @@ print(f"Pi científico: {pi:.2e}")    # Pi científico: 3.14e+00
 print(f"Pi porcentaje: {pi:.1%}")    # Pi porcentaje: 314.2%
 ```
 
-**Alineación y relleno**
+#### **Alineación y relleno**
 
 ```python
 texto = "Python"
@@ -335,7 +245,7 @@ print(f"|{numero:0>10}|")  # |0000000042|
 print(f"|{numero:*^10}|")  # |****42****|
 ```
 
-**Formateo con separadores de miles**
+#### **Formateo con separadores de miles**
 
 ```python
 poblacion = 47500000
@@ -368,7 +278,7 @@ def mostrar_factura(cliente, productos):
         print(f"{nombre:<20} {precio:>8.2f}€ x {cantidad:>2} = {subtotal:>8.2f}€")
     
     print("-" * 50)
-    print(f"{'TOTAL:':<30} {total:>8.2f}€")
+    print(f"{'TOTAL:':<37} {total:>8.2f}€")
     print("=" * 50)
 
 # Uso
@@ -379,6 +289,22 @@ productos = [
 ]
 
 mostrar_factura("Ana García", productos)
+```
+
+**Salida en consola:**
+
+```
+==================================================
+                     FACTURA
+==================================================
+Cliente: Ana García
+--------------------------------------------------
+Laptop Dell XPS       1299.99€ x  1 =  1299.99€
+Mouse inalámbrico       35.50€ x  2 =    71.00€
+Teclado mecánico        89.99€ x  1 =    89.99€
+--------------------------------------------------
+TOTAL:                                 1460.98€
+==================================================
 ```
 
 #### Tabla de especificadores de formato
@@ -429,17 +355,18 @@ mensaje = "Hola, me llamo %s y tengo %d años" % (nombre, edad)
 print(mensaje)
 ```
 
-### 4.5. Casos prácticos avanzados
+***
 
-#### Calculadora interactiva
+### 4.5. Caso práctico: Calculadora interactiva
+
+El siguiente ejemplo integra `input()`, `print()` y la conversión de tipos para crear una calculadora funcional que se ejecuta en la consola.
 
 ```python
 def calculadora():
     """Calculadora interactiva con interfaz amigable."""
     print("=" * 40)
-    print("       CALCULADORA PYTHON")
+    print(" CALCULADORA PYTHON")
     print("=" * 40)
-    
     while True:
         try:
             # Entrada de datos
@@ -471,81 +398,14 @@ def calculadora():
             # Continuar o salir
             if input("\n¿Otra operación? (s/n): ").lower().startswith('n'):
                 break
-                
         except ValueError:
             print("❌ Error: Introduce números válidos")
         except KeyboardInterrupt:
             print("\n\n👋 ¡Hasta luego!")
             break
-
-# calculadora()  # Descomenta para probar
 ```
 
-#### Sistema de registro de usuario
-
-```python
-def registro_usuario():
-    """Sistema de registro con validaciones."""
-    print("🔐 REGISTRO DE USUARIO")
-    print("-" * 30)
-    
-    # Recopilar información
-    datos = {}
-    
-    # Nombre (requerido)
-    while True:
-        nombre = input("Nombre completo: ").strip()
-        if len(nombre) >= 2:
-            datos['nombre'] = nombre
-            break
-        print("❌ El nombre debe tener al menos 2 caracteres")
-    
-    # Edad (validación numérica)
-    while True:
-        try:
-            edad = int(input("Edad: "))
-            if 13 <= edad <= 120:
-                datos['edad'] = edad
-                break
-            else:
-                print("❌ La edad debe estar entre 13 y 120 años")
-        except ValueError:
-            print("❌ Introduce una edad válida")
-    
-    # Email (validación básica)
-    while True:
-        email = input("Email: ").strip().lower()
-        if "@" in email and "." in email and len(email) >= 5:
-            datos['email'] = email
-            break
-        print("❌ Introduce un email válido")
-    
-    # Ciudad (opcional)
-    ciudad = input("Ciudad (opcional): ").strip()
-    if ciudad:
-        datos['ciudad'] = ciudad
-    
-    # Mostrar resumen
-    print("\n" + "="*50)
-    print("RESUMEN DE REGISTRO")
-    print("="*50)
-    print(f"👤 Nombre: {datos['nombre']}")
-    print(f"🎂 Edad: {datos['edad']} años")
-    print(f"📧 Email: {datos['email']}")
-    if 'ciudad' in datos:
-        print(f"🏙️  Ciudad: {datos['ciudad']}")
-    
-    # Confirmación
-    confirmar = input("\n¿Confirmar registro? (s/n): ").lower()
-    if confirmar.startswith('s'):
-        print("\n✅ ¡Usuario registrado exitosamente!")
-        return datos
-    else:
-        print("\n❌ Registro cancelado")
-        return None
-
-# usuario = registro_usuario()  # Descomenta para probar
-```
+***
 
 ### Resumen del Capítulo
 
@@ -575,3 +435,7 @@ Crea un programa que:
 2. Calcule impuestos basados en tramos
 3. Muestre una nómina formateada profesionalmente
 4. Permita guardar múltiples empleados y mostrar estadísticas
+
+Con la capacidad de recibir datos del usuario y presentarle resultados formateados, nuestros programas ya pueden interactuar con el mundo. El siguiente paso es dotarlos de inteligencia para que puedan tomar decisiones basadas en esa información, lo que nos lleva a las estructuras condicionales.
+
+***
