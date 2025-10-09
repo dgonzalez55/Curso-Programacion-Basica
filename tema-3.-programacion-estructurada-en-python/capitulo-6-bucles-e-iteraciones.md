@@ -32,7 +32,7 @@ for i in range(1, 6): print(f"Número {i}")
 
 ***
 
-### 6.2. Bucle while: Repetición condicional
+### 6.2. Bucle `while`: Repetición condicional
 
 El bucle **`while`** ejecuta un bloque de código **mientras** una condición especificada sea `True`. Es la herramienta ideal cuando <mark style="background-color:yellow;">**no se conoce de antemano el número exacto de iteraciones que se deben realizar**</mark>.
 
@@ -77,7 +77,7 @@ print(f"Tu edad es: {edad_usuario}")
 
 ***
 
-### 6.3. Bucle for: Iteración sobre secuencias
+### 6.3. Bucle `for`: Iteración sobre secuencias
 
 El bucle `for` está diseñado para **iterar sobre los elementos de una secuencia** (como una lista, tupla, cadena de texto, o un `range`). Es la opción preferida cuando **se conoce el número de iteraciones** o cuando se desea procesar cada elemento de una colección.
 
@@ -491,3 +491,5 @@ Crea un programa que:
 5. Use bucles anidados para organizar tareas por categorías
 
 Ahora que sabemos cómo repetir acciones, podemos explorar la "caja de herramientas" que Python nos ofrece de serie: un conjunto de funciones integradas que facilitan y potencian el trabajo con bucles, iterables y otros tipos de datos.
+
+***
