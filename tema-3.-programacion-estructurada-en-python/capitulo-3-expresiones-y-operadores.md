@@ -1,16 +1,14 @@
 # Capítulo 3: Expresiones y operadores
 
-En programación, las **expresiones** son combinaciones de variables, literales, operadores y funciones que, después de su evaluación o cálculo, nos devuelven un valor de un tipo determinado. Los **operadores** son los símbolos que nos permiten realizar operaciones sobre estos valores: desde cálculos matemáticos básicos hasta comparaciones lógicas complejas.
-
-En Python, existe una rica variedad de operadores que nos permiten manipular datos de formas muy sofisticadas. En este capítulo exploraremos todos los tipos de operadores disponibles, sus reglas de precedencia y cómo combinarlos para crear expresiones potentes y eficientes.
+Si las variables y los datos son los ladrillos de un programa, las **expresiones** y los **operadores** son el mortero que los une para construir estructuras lógicas. Una expresión es cualquier combinación de valores, variables y operadores que Python puede evaluar para producir un resultado. Dominar los operadores es esencial para manipular datos, realizar cálculos y tomar decisiones, formando el núcleo de la lógica de cualquier aplicación.
 
 ### 3.1. ¿Qué es una expresión?
 
-Una **expresión** es una combinación de uno o más valores, variables, operadores y llamadas a funciones que Python puede evaluar para producir un resultado. Las expresiones son los bloques básicos de construcción de cualquier programa.
+Las **expresiones** son los bloques de construcción fundamentales de la lógica de un programa. Pueden ser tan simples como un número o tan complejas como una fórmula matemática. Se pueden clasificar en varios tipos como veremos a continuación.
 
 #### Tipos de expresiones
 
-**1. Expresiones literales**: Valores constantes
+**1. Expresiones literales**: Valores constantes.
 
 ```python
 42                    # Expresión literal entera
@@ -19,7 +17,7 @@ Una **expresión** es una combinación de uno o más valores, variables, operado
 True                 # Expresión literal booleana
 ```
 
-**2. Expresiones con variables**: Utilizan identificadores
+**2. Expresiones con variables**: Utilizan identificadores que referencian valores.
 
 ```python
 edad                 # Variable simple
@@ -28,7 +26,7 @@ lista[0]            # Acceso a elemento
 diccionario["clave"] # Acceso a diccionario
 ```
 
-**3. Expresiones aritméticas**: Combinan valores con operadores matemáticos
+**3. Expresiones aritméticas**: Combinan valores numéricos con operadores matemáticos.
 
 ```python
 3 + 5                # Suma simple
@@ -36,7 +34,7 @@ edad * 2             # Multiplicación con variable
 (radio ** 2) * 3.14  # Expresión compleja con paréntesis
 ```
 
-**4. Expresiones lógicas**: Evalúan a True o False
+**4. Expresiones lógicas**: Se evalúan como `True` o `False` y se usan en estructuras de control.
 
 ```python
 edad >= 18           # Comparación
@@ -44,7 +42,7 @@ activo and verificado # Combinación lógica
 not usuario_bloqueado # Negación
 ```
 
-**5. Expresiones con funciones**: Incluyen llamadas a funciones
+**5. Expresiones con funciones**: Incluyen llamadas a funciones que devuelven un valor.
 
 ```python
 len(lista)           # Función incorporada
@@ -52,11 +50,9 @@ max(a, b, c)        # Función con múltiples argumentos
 math.sqrt(25)       # Función de módulo
 ```
 
-### 3.2. Operadores aritméticos
+### 3.2. Operadores Aritméticos
 
-Los operadores aritméticos nos permiten realizar operaciones matemáticas sobre números.
-
-#### Operadores aritméticos básicos
+Estos operadores se utilizan para realizar operaciones matemáticas.
 
 | Operador | Nombre              | Ejemplo  | Resultado |
 | -------- | ------------------- | -------- | --------- |
@@ -68,7 +64,11 @@ Los operadores aritméticos nos permiten realizar operaciones matemáticas sobre
 | `%`      | Módulo (resto)      | `3 % 2`  | `1`       |
 | `**`     | Potencia            | `3 ** 2` | `9`       |
 
-#### Ejemplos prácticos
+Es crucial entender la diferencia entre la división flotante (`/`), que siempre devuelve un `float`, y la división entera (`//`), que trunca el resultado hacia el entero inferior más cercano. Con números negativos, `//` redondea "hacia abajo" (hacia menos infinito), por lo que `-10 // 3` es `-4`.
+
+El operador módulo (`%`) es muy útil para tareas como determinar si un número es par o impar: `numero % 2 == 0`.
+
+**Ejemplos básicos**
 
 ```python
 # Operaciones básicas
@@ -84,7 +84,7 @@ print(f"División entera: {numero1 // numero2}") # División entera: 1
 print(f"Potencia: {numero1 ** numero2}")      # Potencia: 9
 ```
 
-#### División: diferencias importantes
+**Ejemplos de divisiones reales y enteras**
 
 ```python
 # División flotante (/) - Siempre devuelve float
@@ -102,7 +102,7 @@ import math
 print(math.trunc(-10 / 3))  # -3
 ```
 
-#### Operador módulo: casos prácticos
+**Ejemplos de uso del operador módulo (`%`)**
 
 ```python
 # Determinar si un número es par o impar
@@ -125,11 +125,15 @@ for i in range(10):
     print(f"Posición {i}: {color_actual}")
 ```
 
-### 3.3. Operadores de cadenas
+### 3.3. Operadores de Cadenas
 
-Las cadenas de texto tienen operadores específicos para manipulación.
+Las cadenas de texto tienen operadores específicos:
 
-#### Concatenación (+) y repetición (\*)
+* <mark style="background-color:$primary;">**Concatenación**</mark>**&#x20;(`+`)**: Une dos cadenas.
+* <mark style="background-color:$primary;">**Repetición**</mark>**&#x20;(`*`)**: Repite una cadena un número determinado de veces.
+* <mark style="background-color:$primary;">**Acceso por índice y**</mark><mark style="background-color:$primary;">**&#x20;**</mark>_<mark style="background-color:$primary;">**slicing**</mark>_ **(`[start:end:step]`)**: Permite extraer caracteres o subcadenas. Los índices negativos cuentan desde el final.
+
+**Ejemplos de Concatenación y Repetición**
 
 ```python
 cadena1 = "Hola"
@@ -151,7 +155,7 @@ titulo = "=" * 20 + " TÍTULO " + "=" * 20
 print(titulo)  # ==================== TÍTULO ====================
 ```
 
-#### Operadores de acceso (slice)
+**Ejemplos de accesso por índice y&#x20;**_**slicing**_
 
 ```python
 texto = "Python Programming"
@@ -171,26 +175,9 @@ print(texto[::2])    # Pto rgamn
 print(texto[::-1])   # gnimmargorP nohtyP (reverso)
 ```
 
-#### Operadores de pertenencia
+### 3.4. Operadores de Asignación
 
-```python
-texto = "Hola mundo"
-
-# Verificar si una subcadena está presente
-print("Hola" in texto)      # True
-print("adiós" in texto)     # False
-print("HOLA" in texto)      # False (sensible a mayúsculas)
-
-# Verificar si NO está presente
-print("xyz" not in texto)   # True
-print("mundo" not in texto) # False
-```
-
-### 3.4. Operadores de asignación
-
-Combinan una operación aritmética con una asignación para código más conciso.
-
-#### Operadores de asignación compuesta
+Los operadores de asignación compuesta son una forma abreviada de modificar el valor de una variable.
 
 | Operador | Equivalente      | Ejemplo   |
 | -------- | ---------------- | --------- |
@@ -202,7 +189,7 @@ Combinan una operación aritmética con una asignación para código más concis
 | `%=`     | `x = x % valor`  | `x %= 3`  |
 | `**=`    | `x = x ** valor` | `x **= 2` |
 
-#### Ejemplos prácticos
+**Ejemplos prácticos:**
 
 ```python
 # Contador tradicional
@@ -227,9 +214,9 @@ numeros += [4, 5]    # numeros = [1, 2, 3, 4, 5]
 numeros *= 2         # numeros = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
 ```
 
-### 3.5. Operadores de comparación
+### 3.5. Operadores de Comparación y de Identidad
 
-Comparan valores y devuelven `True` o `False`.
+Estos operadores comparan dos valores y devuelven un booleano (`True` o `False`).
 
 #### Operadores de comparación básicos
 
@@ -242,14 +229,7 @@ Comparan valores y devuelven `True` o `False`.
 | `>=`     | Mayor o igual que | `a >= b` |
 | `<=`     | Menor o igual que | `a <= b` |
 
-#### Operadores de identidad
-
-| Operador | Significado                 | Uso          |
-| -------- | --------------------------- | ------------ |
-| `is`     | Mismo objeto en memoria     | `a is b`     |
-| `is not` | Diferente objeto en memoria | `a is not b` |
-
-#### Ejemplos prácticos
+**Ejemplos prácticos:**
 
 ```python
 # Comparaciones numéricas
@@ -267,18 +247,37 @@ print(f"{num1} <= {num2}: {num1 <= num2}")  # False
 palabra1 = "Python"
 palabra2 = "python"
 print(f"'{palabra1}' == '{palabra2}': {palabra1 == palabra2}")  # False
+```
 
-# Identidad vs igualdad
+#### Operadores de identidad
+
+| Operador | Significado                 | Uso          |
+| -------- | --------------------------- | ------------ |
+| `is`     | Mismo objeto en memoria     | `a is b`     |
+| `is not` | Diferente objeto en memoria | `a is not b` |
+
+Es fundamental distinguir entre igualdad (`==`) e identidad (`is`):
+
+* `==` compara el contenido o valor de los objetos.
+* `is` comprueba si dos variables apuntan al mismo objeto en memoria.
+
+**Ejemplos prácticos:**
+
+```python
 lista1 = [1, 2, 3]
 lista2 = [1, 2, 3]
 lista3 = lista1
 
-print(f"lista1 == lista2: {lista1 == lista2}")  # True (mismo contenido)
-print(f"lista1 is lista2: {lista1 is lista2}")  # False (objetos diferentes)
-print(f"lista1 is lista3: {lista1 is lista3}")  # True (mismo objeto)
+print(lista1 == lista2)  # True (mismo contenido)
+print(lista1 is lista2)  # False (objetos diferentes en memoria)
+print(lista1 is lista3)  # True (apuntan al mismo objeto)
 ```
 
 #### Comparaciones encadenadas
+
+Python también permite encadenar comparaciones de forma muy legible: `18 <= edad <= 65`.
+
+**Ejemplos prácticos:**
 
 ```python
 # Python permite comparaciones encadenadas
@@ -294,9 +293,13 @@ print(a < b < c)         # True
 print(a < b > c)         # False
 ```
 
-### 3.6. Operadores lógicos
+### 3.6. Operadores Lógicos
 
-Permiten combinar expresiones booleanas.
+Los operadores lógicos (`and`, `or`, `not`) se usan para **combinar expresiones booleanas**.
+
+* **`and`**: Devuelve `True` solo si ambos operandos son `True`.
+* **`or`**: Devuelve `True` si al menos uno de los operandos es `True`.
+* **`not`**: Invierte el valor booleano del operando.
 
 #### Operadores lógicos básicos
 
@@ -333,7 +336,7 @@ Permiten combinar expresiones booleanas.
 | True  | False |
 | False | True  |
 
-#### Ejemplos prácticos
+**Ejemplos prácticos**
 
 ```python
 # Variables de ejemplo
@@ -356,15 +359,14 @@ print(f"¿Adulto con documentos? {es_adulto_con_documentos}")  # False
 
 #### Evaluación de cortocircuito
 
-Python utiliza **evaluación de cortocircuito** (short-circuit evaluation):
+Una característica importante es la <mark style="background-color:$primary;">**evaluación de cortocircuito**</mark> (_short-circuit evaluation_). Python evalúa las expresiones lógicas de izquierda a derecha y se detiene tan pronto como conoce el resultado final.
+
+* En una expresión `A and B`, si `A` es `False`, `B` no se evalúa.
+* En una expresión `A or B`, si `A` es `True`, `B` no se evalúa.
+
+Esto es útil para evitar errores, como intentar dividir por cero o acceder a un elemento de una lista vacía:
 
 ```python
-# AND: si el primer operando es False, no evalúa el segundo
-resultado = False and print("Esto no se ejecuta")
-
-# OR: si el primer operando es True, no evalúa el segundo
-resultado = True or print("Esto no se ejecuta")
-
 # Ejemplo práctico para evitar errores
 lista = []
 # Sin cortocircuito causaría IndexError si la lista está vacía
@@ -377,11 +379,9 @@ if divisor != 0 and 10 / divisor > 2:
     print("El resultado es mayor que 2")
 ```
 
-### 3.7. Operadores de pertenencia
+### 3.7. Operadores de Pertenencia
 
-Verifican si un elemento está presente en una secuencia.
-
-#### Operadores in y not in
+Los operadores `in` y `not in` comprueban si un elemento existe dentro de una secuencia (como listas, tuplas, cadenas o diccionarios).
 
 ```python
 # Con listas
@@ -411,53 +411,21 @@ print("rojo" in colores)     # True
 print("amarillo" in colores) # False
 ```
 
-### 3.8. Precedencia de operadores
+### 3.8. Precedencia de Operadores
 
-La **precedencia de operadores** determina el orden en que se evalúan las operaciones en una expresión compleja.
+La **precedencia de operadores** determina el orden en que se realizan las operaciones en una expresión. La jerarquía, de mayor a menor precedencia, es la siguiente:
 
-#### Tabla de precedencia (de mayor a menor)
+1. **Paréntesis:** `()`
+2. **Potencia:** `**`
+3. **Operadores unarios:** `+x`, `-x`, `not x`
+4. **Multiplicación, División, Módulo:** `*`, `/`, `//`, `%`
+5. **Suma, Resta:** `+`, `-`
+6. **Operadores de comparación, identidad y pertenencia:** `==`, `!=`, `is`, `in`, etc.
+7. **Operadores lógicos:** `not`, `and`, `or`
 
-1. **Paréntesis**: `()`
-2. **Potencia**: `**`
-3. **Unarios**: `+x`, `-x`, `not x`
-4. **Multiplicación, División, Módulo**: `*`, `/`, `//`, `%`
-5. **Suma, Resta**: `+`, `-`
-6. **Comparación**: `==`, `!=`, `<`, `<=`, `>`, `>=`, `is`, `is not`, `in`, `not in`
-7. **Lógicos**: `not`, `and`, `or`
+Aunque Python sigue estas reglas de forma predecible, el uso explícito de paréntesis `()` es una marca de profesionalismo. No solo garantiza el orden de evaluación deseado, sino que, más importante aún, elimina la carga cognitiva para quien lee el código. Un código claro y sin ambigüedades previene errores sutiles y es un pilar de la programación defensiva.
 
-#### Ejemplos de precedencia
-
-```python
-# Sin paréntesis - precedencia natural
-resultado = 2 + 3 * 4      # 2 + 12 = 14
-print(resultado)
-
-# Con paréntesis - cambia la precedencia
-resultado = (2 + 3) * 4    # 5 * 4 = 20
-print(resultado)
-
-# Expresión compleja
-resultado = 2 ** 3 + 4 * 5 - 6 / 2
-# Evaluación: 8 + 20 - 3.0 = 25.0
-print(resultado)
-
-# Con paréntesis para claridad
-resultado = (2 ** 3) + (4 * 5) - (6 / 2)
-print(resultado)  # 25.0
-
-# Precedencia con operadores lógicos
-edad = 25
-activo = True
-resultado = edad > 18 and activo or False
-# Evaluación: True and True or False = True
-print(resultado)
-
-# Mejor con paréntesis para claridad
-resultado = (edad > 18 and activo) or False
-print(resultado)  # True
-```
-
-#### Buenas prácticas con precedencia
+**Ejemplos prácticos**
 
 ```python
 # ❌ Confuso sin paréntesis
@@ -479,9 +447,9 @@ precio_final = precio_con_impuesto - descuento
 precio_final = precio_base * (1 + impuesto) - descuento
 ```
 
-### 3.9. Operadores binarios (avanzado)
+### 3.9. Operadores Binarios (Avanzado)
 
-Los operadores binarios trabajan a nivel de bits. Son útiles en programación de bajo nivel y algoritmos específicos.
+Python también incluye operadores a nivel de bits (`&`, `|`, `^`, `~`, `<<`, `>>`) que manipulan números enteros en su representación binaria. Su uso es menos común y se reserva para programación de bajo nivel, optimizaciones específicas o algoritmos criptográficos.
 
 #### Operadores binarios básicos
 
@@ -543,3 +511,7 @@ Crea un programa que:
 2. Determine la categoría usando operadores de comparación y lógicos
 3. Verifique si la entrada es válida usando operadores de pertenencia
 4. Use operadores de asignación para mantener estadísticas de uso
+
+Una vez que dominamos cómo construir expresiones y manipular datos, el siguiente paso lógico es aprender a interactuar con el mundo exterior: recibir información del usuario y mostrarle resultados.
+
+***

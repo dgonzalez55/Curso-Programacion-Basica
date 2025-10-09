@@ -18,7 +18,7 @@
 * 2.3. Tipos de datos básicos y colecciones
 * 2.4. Constantes y su uso en Python
 
-#### ➕ [Capítulo 3: Expresiones y operadores](capitulo-3-expresiones-y-operadores.md)
+#### ➕ [Capítulo 3: Expresiones y operadores](broken-reference)
 
 * 3.1. ¿Qué es una expresión?
 * 3.2. Operadores aritméticos
