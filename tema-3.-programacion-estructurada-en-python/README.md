@@ -11,7 +11,7 @@
 * 1.5. Entrada, proceso y salida (modelo IPO)
 * 1.6. El shebang y ejecución de scripts
 
-#### 💾 [Capítulo 2: Variables, constantes y tipos](capitulo-2-variables-constantes-y-tipos.md)
+#### 💾 [Capítulo 2: Variables, constantes y tipos](broken-reference)
 
 * 2.1. Identificadores, reglas y buenas prácticas
 * 2.2. Tipado fuerte y dinámico en Python

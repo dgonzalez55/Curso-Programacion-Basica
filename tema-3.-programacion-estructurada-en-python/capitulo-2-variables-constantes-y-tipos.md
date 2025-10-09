@@ -1,85 +1,31 @@
 # Capítulo 2: Variables, constantes y tipos
 
-En programación, las variables son los recipientes que almacenan la información con la que trabaja nuestro programa. Imagina que la memoria de tu ordenador es como una enorme biblioteca, y las variables son las etiquetas que colocamos en las estanterías para saber dónde encontrar cada libro. En Python, estas etiquetas (variables) tienen reglas específicas sobre cómo pueden llamarse y qué tipos de información pueden almacenar.
+En programación, las variables son los contenedores fundamentales que almacenan la información con la que trabaja un programa. Si la memoria del ordenador fuera una inmensa biblioteca, las variables serían como las etiquetas en las estanterías que nos indican dónde encontrar cada libro (dato). Sin ellas, sería imposible realizar cualquier cálculo o manipular información. Este capítulo explora cómo nombrar y utilizar correctamente estas "etiquetas", así como los diferentes tipos de datos que pueden referenciar, y las reglas que gobiernan su uso en Python.
 
-En este capítulo exploraremos el sistema de tipos de Python, las reglas de nomenclatura, y comprenderemos cómo Python gestiona la memoria y los tipos de forma dinámica pero segura.
+### 2.1. Identificadores: Reglas y buenas prácticas
 
-### 2.1. Identificadores, reglas y buenas prácticas
+Un **identificador** es el nombre que damos a una variable, función, clase u otro objeto en Python. Es la "_etiqueta_" que asociamos a un valor en memoria.
 
-#### Definición de identificador
+Para nombrar identificadores, se deben seguir unas reglas obligatorias:
 
-Un **identificador** es un nombre que utilizamos para referenciar variables, funciones, clases, módulos u otros objetos en Python. Es la etiqueta que asociamos con un valor almacenado en la memoria.
+1. **Carácter inicial**: Debe comenzar con una **letra** (a-z, A-Z) o un **guion bajo** (`_`). Nunca puede empezar con un número.
+   * _<mark style="background-color:$success;">**Válido**</mark>:_ `nombre`, `_contador`, `Usuario1`
+   * _<mark style="background-color:$danger;">**Inválido**</mark>:_ `1usuario`, `-precio`, `@email`
+2. **Caracteres posteriores**: Después del primer carácter, puede contener letras, números y guiones bajos.
+   * _<mark style="background-color:$success;">**Válido**</mark>:_ `nombre_completo`, `temperatura_2024`
+   * _<mark style="background-color:$danger;">**Inválido**</mark>:_ `precio-final` (el guion medio no está permitido)
+3. **Sensibilidad a mayúsculas**: Python distingue entre mayúsculas y minúsculas. `nombre`, `Nombre` y `NOMBRE` son tres variables diferentes.
+4. **Palabras reservadas**: No se pueden usar como identificadores las palabras clave del lenguaje (ej. `if`, `for`, `while`, `class`).
 
-#### Reglas obligatorias para identificadores
+Además de las reglas, la guía de estilo PEP 8 establece convenciones para que el código sea más legible y consistente:
 
-**1. Carácter inicial**: Debe comenzar con una **letra** (a-z, A-Z) o **guion bajo** (\_)
+| Tipo                      | Convención                                        | Ejemplo                               |
+| ------------------------- | ------------------------------------------------- | ------------------------------------- |
+| **Variables y funciones** | `snake_case` (minúsculas con guiones bajos)       | `edad_usuario`, `calcular_promedio()` |
+| **Constantes**            | `UPPER_CASE` (mayúsculas con guiones bajos)       | `PI`, `MAX_INTENTOS`                  |
+| **Clases**                | `PascalCase` (cada palabra empieza con mayúscula) | `Usuario`, `CalculadoraMatematica`    |
 
-```python
-# ✅ Válido
-nombre = "Ana"
-_contador = 0
-Usuario1 = "admin"
-
-# ❌ Inválido
-1usuario = "admin"    # Error: no puede empezar con número
--precio = 100         # Error: no puede empezar con guion
-@email = "test"       # Error: @ no es válido
-```
-
-**2. Caracteres posteriores**: Pueden contener letras, números y guiones bajos
-
-```python
-# ✅ Válido
-nombre_completo = "Ana García"
-temperatura_2024 = 25.5
-__valor_privado = 42
-
-# ❌ Inválido
-precio-final = 100    # Error: guion no válido
-área_círculo = 3.14   # Error: caracteres especiales no ASCII
-```
-
-**3. Sensibilidad a mayúsculas**: Python distingue entre mayúsculas y minúsculas
-
-```python
-nombre = "Ana"
-Nombre = "Pedro"
-NOMBRE = "Juan"
-
-print(nombre)  # Ana
-print(Nombre)  # Pedro
-print(NOMBRE)  # Juan
-```
-
-**4. Palabras reservadas**: No se pueden usar las palabras clave de Python
-
-```python
-# Palabras reservadas que NO puedes usar como identificadores
-and, as, assert, break, class, continue, def, del, elif, else,
-except, exec, finally, for, from, global, if, import, in, is,
-lambda, not, or, pass, print, raise, return, try, while, with, yield
-
-# ❌ Inválido
-if = 5        # Error: 'if' es palabra reservada
-class = "A"   # Error: 'class' es palabra reservada
-
-# ✅ Alternativas válidas
-condicion = True
-tipo_clase = "A"
-```
-
-#### Convenciones de nomenclatura (PEP 8)
-
-| Tipo                       | Convención                                                | Ejemplo                                |
-| -------------------------- | --------------------------------------------------------- | -------------------------------------- |
-| **Variables y funciones**  | `snake_case` (minúsculas con guiones bajos)               | `edad_usuario`, `calcular_promedio()`  |
-| **Constantes**             | `UPPER_CASE` (mayúsculas con guiones bajos)               | `PI`, `MAX_INTENTOS`, `NOMBRE_ARCHIVO` |
-| **Clases**                 | `PascalCase` (primera letra de cada palabra en mayúscula) | `Usuario`, `CalculadoraMatematica`     |
-| **Variables privadas**     | Prefijo con guion bajo                                    | `_variable_interna`                    |
-| **Variables muy privadas** | Doble guion bajo                                          | `__variable_muy_privada`               |
-| **Módulos y paquetes**     | `minusculas_cortas`                                       | `utils.py`, `matematicas`              |
-
-**Ejemplos de buenas prácticas:**
+#### **Ejemplos de buenas prácticas**
 
 ```python
 # ✅ Nombres descriptivos y claros
@@ -97,7 +43,7 @@ PI = 3.141592653589793
 VELOCIDAD_LUZ = 299792458  # m/s
 NUMERO_AVOGADRO = 6.02214076e23
 
-# ✅ Funciones con nombres verbos
+# ✅ Funciones con nombres y verbos
 def calcular_area_circulo(radio):
     return PI * radio ** 2
 
@@ -107,11 +53,11 @@ def validar_email(email):
 
 ### 2.2. Tipado fuerte y dinámico en Python
 
-Python implementa un sistema de **tipado fuerte y dinámico** que lo distingue de muchos otros lenguajes de programación.
+El sistema de tipos de Python se define por dos conceptos clave: es de **tipado dinámico y fuerte.**
 
-#### Tipado dinámico
+#### **Tipado dinámico**
 
-**El tipo se determina en tiempo de ejecución**, no necesitas declarar el tipo de la variable al crearla:
+Significa que no es necesario declarar el tipo de una variable al crearla. El tipo se determina en tiempo de ejecución, cuando se le asigna un valor. Además, una misma variable puede cambiar de tipo durante la ejecución del programa. Esto contrasta con lenguajes de tipado estático como Java o C++, donde el tipo de una variable se fija en su declaración y no puede cambiar.
 
 ```python
 # No necesitas declarar el tipo
@@ -126,7 +72,7 @@ variable = [1, 2, 3]    # Ahora es lista
 print(type(variable))   # <class 'list'>
 ```
 
-**Comparación con tipado estático (Java/C++):**
+**Comparación con tipado estático (Java)**
 
 ```java
 // Java (tipado estático)
@@ -134,9 +80,11 @@ int numero = 42;        // Debes declarar el tipo
 String texto = "Hola";  // No puedes cambiar el tipo después
 ```
 
-#### Tipado fuerte
+#### **Tipado fuerte**
 
-**Python no permite operaciones implícitas entre tipos incompatibles**:
+Significa que Python no permite operaciones implícitas entre tipos de datos incompatibles. Por ejemplo, intentar sumar un número y una cadena de texto provocará un error `TypeError`. Para que la operación funcione, es necesario realizar una conversión explícita: `5 + int("10")`. Esto previene errores comunes en lenguajes de tipado débil como JavaScript, que intentaría "adivinar" la intención del programador, a menudo con resultados inesperados.
+
+**Python no permite operaciones implícitas entre tipos incompatibles**
 
 ```python
 # ❌ Esto genera un error (TypeError)
@@ -147,7 +95,7 @@ resultado_numerico = 5 + int("10")    # 15
 resultado_texto = str(5) + "10"       # "510"
 ```
 
-**Comparación con tipado débil (JavaScript):**
+**Comparación con tipado débil (JavaScript)**
 
 ```javascript
 // JavaScript (tipado débil)
@@ -155,6 +103,11 @@ var resultado = 5 + "10";  // "510" - convierte automáticamente
 ```
 
 #### Verificación de tipos
+
+Para verificar el tipo de una variable, se pueden usar dos funciones:
+
+* **`type()`**: Devuelve el tipo exacto de un objeto.
+* **`isinstance()`**: Comprueba si un objeto es una instancia de una clase o de una tupla de clases. Generalmente es más flexible y recomendada, ya que también funciona correctamente con la herencia.
 
 ```python
 # Función type() - tipo exacto
@@ -178,9 +131,11 @@ def procesar_dato(dato):
 
 ### 2.3. Tipos de datos básicos y colecciones
 
-#### Tipos primitivos fundamentales
+Python ofrece un rico conjunto de tipos de datos integrados.
 
-**Enteros (int)**
+#### Enteros (`int`)
+
+Números sin decimales. Pueden ser positivos, negativos o cero, y su tamaño solo está limitado por la memoria disponible. Se pueden representar en diferentes bases y usar guiones bajos para mejorar la legibilidad.
 
 ```python
 # Números enteros sin límite de tamaño
@@ -198,7 +153,9 @@ poblacion_mundial = 7_900_000_000
 print(poblacion_mundial)  # 7900000000
 ```
 
-**Números de punto flotante (float)**
+#### Punto flotante (`float`)
+
+Números con decimales. Tienen una precisión limitada, lo que puede llevar a pequeños errores de redondeo. Se puede usar notación científica.
 
 ```python
 # Números con decimales (precisión limitada)
@@ -218,7 +175,9 @@ b = Decimal('0.2')
 print(a + b)           # 0.3
 ```
 
-**Booleanos (bool)**
+#### Booleanos (`bool`)
+
+Representan valores de verdad. Solo pueden ser `True` o `False`. Ciertos valores, conocidos como "falsy", se evalúan como `False` en un contexto booleano.
 
 ```python
 # Solo dos valores posibles
@@ -239,7 +198,9 @@ for valor in falsy_values:
     print(f"{valor} es {bool(valor)}")
 ```
 
-**Cadenas de texto (str)**
+#### Cadenas de texto (`str`)
+
+Secuencias de caracteres. Son inmutables, lo que significa que no se pueden modificar una vez creadas. Esta inmutabilidad garantiza que el objeto no pueda ser modificado accidentalmente, haciéndolo seguro para usar como clave de diccionario o en entornos complejos como la programación multihilo.
 
 ```python
 # Diferentes formas de definir strings
@@ -268,7 +229,9 @@ print("Py" in nombre)      # True
 nuevo_nombre = "J" + nombre[1:]  # ✅ Crear nueva string
 ```
 
-#### Tipos None
+#### **Tipo `None`**
+
+El tipo `None` representa la ausencia de valor. Es similar al `null` de otros lenguajes y se utiliza a menudo para indicar que una variable no tiene un valor asignado o que una función no devuelve nada explícitamente.
 
 ```python
 # Representa la ausencia de valor
@@ -287,9 +250,11 @@ if resultado is None:
     print("Usuario no encontrado")
 ```
 
-#### Colecciones básicas
+#### **Colecciones**
 
-**Listas (list) - Mutables y ordenadas**
+**Listas (`list`)**&#x20;
+
+Colecciones ordenadas y mutables de elementos. Pueden contener datos de diferentes tipos.
 
 ```python
 # Creación y operaciones básicas
@@ -311,7 +276,9 @@ numeros.remove(3)     # [100, 99, 2, 4, 5, 6]
 print(f"Longitud: {len(numeros)}")
 ```
 
-**Tuplas (tuple) - Inmutables y ordenadas**
+**Tuplas (`tuple`)**
+
+Colecciones ordenadas e inmutables. Una vez creadas, no se pueden modificar. Son más eficientes en memoria que las listas y, gracias a su inmutabilidad, pueden usarse como claves de diccionario.
 
 ```python
 # Más eficientes en memoria que las listas
@@ -331,7 +298,9 @@ x, y = coordenadas
 print(f"X: {x}, Y: {y}")  # X: 10, Y: 20
 ```
 
-**Rangos (range) - Secuencias numéricas inmutables**
+**Rangos (`range`)**
+
+Secuencias numéricas inmutables y eficientes en memoria, ya que no almacenan todos los números a la vez, sino que los generan bajo demanda.
 
 ```python
 # Generan secuencias bajo demanda (eficientes en memoria)
@@ -349,7 +318,9 @@ for i in range(3):
     print(f"Iteración {i}")
 ```
 
-**Diccionarios (dict) - Mapas clave-valor mutables**
+**Diccionarios (`dict`)**
+
+Colecciones mutables de pares clave-valor, ordenadas por inserción desde Python 3.7+. Las claves deben ser únicas e inmutables.
 
 ```python
 # Colecciones no ordenadas de pares clave-valor
@@ -374,7 +345,9 @@ print(estudiante.values())         # dict_values(['Ana', 21, 'Informática', 'an
 print(estudiante.items())          # dict_items([...])
 ```
 
-**Conjuntos (set) - Elementos únicos, no ordenados, mutables**
+**Conjuntos (`set`)**
+
+Colecciones mutables y no ordenadas de elementos únicos. Son útiles para eliminar duplicados y realizar operaciones matemáticas de conjuntos (unión, intersección, etc.).
 
 ```python
 # Elementos únicos, ideales para eliminar duplicados
@@ -398,33 +371,18 @@ print(conjunto_a ^ conjunto_b)  # {1, 2, 5, 6} - diferencia simétrica
 
 ### 2.4. Constantes y su uso en Python
 
-#### Convención para constantes
-
-Python **no tiene constantes verdaderas** (inmutables por el lenguaje), pero por convención se utilizan identificadores en **MAYÚSCULAS** para indicar que un valor no debe modificarse:
+Como se mencionó anteriormente, **Python no tiene un mecanismo para crear constantes verdaderas**. La convención establecida por PEP 8 es utilizar nombres de variables completamente en mayúsculas (`UPPER_CASE`) para indicar que un valor no debe ser modificado.
 
 ```python
-# ✅ Constantes bien definidas
-PI = 3.141592653589793
-VELOCIDAD_LUZ = 299792458  # metros por segundo
-GRAVEDAD_TIERRA = 9.81     # m/s²
-MAX_USUARIOS = 1000
-NOMBRE_APLICACION = "MiApp"
-COLORES_PERMITIDOS = ["rojo", "verde", "azul"]
-
-# Uso en funciones
-def calcular_area_circulo(radio):
-    return PI * radio ** 2
-
-def calcular_energia(masa):
-    return masa * VELOCIDAD_LUZ ** 2
-
-# ⚠️ Técnicamente puedes modificarlas, pero no deberías
-# PI = 3.14  # Malo: rompe la convención
+PI = 3.14159
+VELOCIDAD_LUZ = 299792458
 ```
+
+Técnicamente, es posible reasignar estas variables, pero hacerlo se considera una mala práctica.
 
 #### Organización de constantes
 
-**En módulos separados:**
+**En módulos separados**
 
 ```python
 # constantes.py
@@ -440,7 +398,7 @@ def conectar_db():
     return conectar(constantes.DATABASE_URL)
 ```
 
-**En clases:**
+**En clases**
 
 ```python
 class Config:
@@ -454,48 +412,22 @@ class DevelopmentConfig(Config):
     DATABASE_URI = "sqlite:///dev.db"
 ```
 
-#### Variables locales vs. globales
+#### **Variables locales y globales**
+
+El ámbito de una variable determina dónde es accesible.
+
+* **Variables locales**: Se definen dentro de una función y solo son accesibles desde ella.
+* **Variables globales**: Se definen en el nivel principal del script y son accesibles desde cualquier parte. Para modificar una variable global desde dentro de una función, se debe usar la palabra clave `global`.
 
 ```python
-# Variable global
 contador_global = 0
 
 def incrementar_contador():
-    global contador_global  # Necesario para modificar variable global
+    global contador_global  # Indica que vamos a modificar la variable global
     contador_global += 1
 
-def ejemplo_scope():
-    # Variable local
-    contador_local = 10
-    print(f"Local: {contador_local}")
-    print(f"Global: {contador_global}")
-
-# Demostración
 incrementar_contador()
-ejemplo_scope()
-print(f"Contador global final: {contador_global}")  # 1
-```
-
-#### Gestión de memoria y referencias
-
-```python
-# Python gestiona la memoria automáticamente
-a = [1, 2, 3]
-b = a        # b apunta al mismo objeto que a
-c = a[:]     # c es una copia superficial
-
-a.append(4)
-print(a)  # [1, 2, 3, 4]
-print(b)  # [1, 2, 3, 4] - cambió porque apunta al mismo objeto
-print(c)  # [1, 2, 3] - no cambió porque es una copia
-
-# Verificar si dos variables apuntan al mismo objeto
-print(a is b)  # True - mismo objeto
-print(a is c)  # False - objetos diferentes
-print(a == c)  # False - valores diferentes ahora
-
-# Liberar referencias
-del a  # Elimina la referencia, no necesariamente el objeto
+print(contador_global) # 1
 ```
 
 ### Resumen del Capítulo
@@ -509,7 +441,7 @@ En este capítulo has aprendido los fundamentos del sistema de variables y tipos
 * **Tipos primitivos**: `int`, `float`, `bool`, `str`, `None`
 * **Colecciones**: `list`, `tuple`, `range`, `dict`, `set`
 * **Constantes**: Convención con MAYÚSCULAS, no inmutabilidad real
-* **Ámbito**: Variables locales vs. globales
+* **Ámbito**: Variables locales y. globales
 
 #### 🤔 Preguntas de Reflexión:
 
@@ -526,3 +458,7 @@ Crea un programa que:
 2. Use diferentes tipos de datos para representar un producto
 3. Implemente funciones que calculen precios finales
 4. Demuestre el correcto uso de variables locales y globales
+
+Ahora que conocemos los diferentes tipos de datos que podemos almacenar, estamos listos para aprender a operar con ellos. El siguiente capítulo explora las expresiones y los operadores, las herramientas que nos permiten construir la lógica de nuestros programas.
+
+***
