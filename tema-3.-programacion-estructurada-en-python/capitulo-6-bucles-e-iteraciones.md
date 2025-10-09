@@ -1,8 +1,10 @@
 # Capítulo 6: Bucles e iteraciones
 
-Los **bucles** o **estructuras iterativas** son construcciones que nos permiten ejecutar un bloque de código múltiples veces. Son fundamentales para automatizar tareas repetitivas, procesar colecciones de datos, implementar algoritmos y crear programas eficientes. En Python disponemos de dos tipos principales de bucles: `while` y `for`, cada uno optimizado para diferentes tipos de situaciones.
+Los **bucles**, o **estructuras iterativas**, son uno de los conceptos más poderosos de la programación. Permiten ejecutar un bloque de código múltiples veces, automatizando tareas repetitivas que serían tediosas o imposibles de escribir manualmente. Su papel es fundamental para procesar colecciones de datos, implementar algoritmos y crear programas dinámicos y eficientes.
 
-Además de los bucles básicos, Python proporciona sentencias de control (`break`, `continue`, `pass`) y características avanzadas como la cláusula `else` que hacen de la iteración una herramienta extremadamente poderosa y flexible.
+&#x20;En Python disponemos de dos tipos principales de bucles: `while` y `for`, cada uno optimizado para diferentes tipos de situaciones. Además, Python proporciona sentencias de control (`break`, `continue`, `pass`) y características avanzadas como la cláusula `else` que hacen de la iteración una herramienta extremadamente poderosa y flexible.
+
+***
 
 ### 6.1. ¿Cuándo necesitamos repetir código?
 
@@ -17,21 +19,24 @@ Los bucles son esenciales en situaciones como:
 Sin bucles, tendríamos que escribir código repetitivo y limitado:
 
 ```python
-# ❌ Sin bucles: código repetitivo y limitado
+#Sin bucles: código repetitivo y limitado
 print("Número 1")
 print("Número 2")
 print("Número 3")
 print("Número 4")
 print("Número 5")
 
-# ✅ Con bucles: código limpio y flexible
-for i in range(1, 6):
-    print(f"Número {i}")
+#Con bucles: código limpio y flexible
+for i in range(1, 6): print(f"Número {i}")
 ```
+
+***
 
 ### 6.2. Bucle while: Repetición condicional
 
-El bucle `while` ejecuta un bloque de código **mientras** una condición sea verdadera. Es ideal cuando **no sabemos exactamente cuántas veces** necesitaremos repetir el código.
+El bucle **`while`** ejecuta un bloque de código **mientras** una condición especificada sea `True`. Es la herramienta ideal cuando <mark style="background-color:yellow;">**no se conoce de antemano el número exacto de iteraciones que se deben realizar**</mark>.
+
+La estructura es simple, pero requiere una atención crucial: **la condición de control debe modificarse dentro del bucle** para que, eventualmente, se vuelva `False`. De lo contrario, se creará un bucle infinito que bloqueará el programa.
 
 #### Sintaxis básica
 
@@ -45,47 +50,13 @@ while condicion:
 #### Ejemplo básico
 
 ```python
-# Contador simple
 contador = 1
 while contador <= 5:
-    print(f"Iteración {contador}")
-    contador += 1  # CRUCIAL: modificar la variable de control
-
-print("Bucle terminado")
+    print(f"Iteración número {contador}")
+    contador += 1 # CRUCIAL: modificar la variable de control
 ```
 
-#### Características importantes del while
-
-**1. Evaluación previa**: La condición se evalúa ANTES de cada iteración
-
-```python
-numero = 10
-while numero < 10:
-    print("Esto nunca se ejecuta")
-    numero += 1
-```
-
-**2. Puede no ejecutarse nunca**: Si la condición inicial es falsa
-
-```python
-x = 5
-while x > 10:  # False desde el principio
-    print("Nunca se ejecuta")
-```
-
-**3. Riesgo de bucle infinito**: Si la condición nunca se vuelve falsa
-
-```python
-# ❌ BUCLE INFINITO - ¡Evitar!
-contador = 1
-while contador <= 5:
-    print("Infinito...")
-    # contador += 1  # ¡Olvidamos incrementar!
-```
-
-#### Ejemplos prácticos con while
-
-**Validación de entrada**
+Un caso de uso principal del bucle `while` es la validación de la entrada del usuario, donde se le solicita un dato repetidamente hasta que introduce uno válido.
 
 ```python
 def pedir_edad():
@@ -104,88 +75,16 @@ edad_usuario = pedir_edad()
 print(f"Tu edad es: {edad_usuario}")
 ```
 
-**Juego de adivinanza**
-
-```python
-import random
-
-def juego_adivinanza():
-    """Juego de adivinanza con intentos limitados."""
-    numero_secreto = random.randint(1, 100)
-    intentos = 0
-    max_intentos = 7
-    
-    print("🎮 ¡Juego de Adivinanza!")
-    print(f"Adivina el número entre 1 y 100 (tienes {max_intentos} intentos)")
-    
-    while intentos < max_intentos:
-        try:
-            intento = int(input(f"Intento {intentos + 1}: "))
-            intentos += 1
-            
-            if intento == numero_secreto:
-                print(f"🎉 ¡Correcto! Era {numero_secreto}")
-                print(f"Lo adivinaste en {intentos} intentos")
-                return True
-            elif intento < numero_secreto:
-                print("📈 El número es mayor")
-            else:
-                print("📉 El número es menor")
-                
-        except ValueError:
-            print("❌ Por favor, introduce un número válido")
-            intentos -= 1  # No contar intentos inválidos
-    
-    print(f"😞 Se acabaron los intentos. Era {numero_secreto}")
-    return False
-
-# juego_adivinanza()  # Descomenta para jugar
-```
-
-**Menú de aplicación**
-
-```python
-def mostrar_menu():
-    """Muestra el menú principal."""
-    print("\n" + "="*30)
-    print("MENÚ PRINCIPAL")
-    print("="*30)
-    print("1. Ver datos")
-    print("2. Agregar entrada")
-    print("3. Configuración")
-    print("4. Ayuda")
-    print("0. Salir")
-    print("-"*30)
-
-def menu_principal():
-    """Bucle principal del menú."""
-    while True:
-        mostrar_menu()
-        
-        opcion = input("Selecciona una opción: ").strip()
-        
-        if opcion == "1":
-            print("📊 Mostrando datos...")
-        elif opcion == "2":
-            print("➕ Agregando entrada...")
-        elif opcion == "3":
-            print("⚙️ Configuración...")
-        elif opcion == "4":
-            print("❓ Mostrando ayuda...")
-        elif opcion == "0":
-            print("👋 ¡Hasta luego!")
-            break
-        else:
-            print("❌ Opción no válida")
-        
-        input("\nPresiona Enter para continuar...")
-
-# menu_principal()  # Descomenta para probar
-```
+***
 
 ### 6.3. Bucle for: Iteración sobre secuencias
 
-El bucle `for` está diseñado para **iterar sobre secuencias** (listas, tuplas, strings, ranges, etc.). Es ideal cuando **sabemos cuántas iteraciones** necesitamos o queremos procesar cada elemento de una colección.
+El bucle `for` está diseñado para **iterar sobre los elementos de una secuencia** (como una lista, tupla, cadena de texto, o un `range`). Es la opción preferida cuando **se conoce el número de iteraciones** o cuando se desea procesar cada elemento de una colección.
+
+* <mark style="background-color:$primary;">**Iterar con**</mark><mark style="background-color:$primary;">**&#x20;**</mark><mark style="background-color:$primary;">**`range()`**</mark>**:** Para ejecutar un bloque un número específico de veces.
+* **I**<mark style="background-color:$primary;">**terar sobre una lista**</mark>**:** Se puede acceder directamente a cada elemento. Para obtener tanto el índice como el valor, se utiliza la función `enumerate()`.
+* <mark style="background-color:$primary;">**Iterar sobre una cadena**</mark>**:** Procesa la cadena carácter por carácter.
+* <mark style="background-color:$primary;">**Iterar sobre un diccionario**</mark>**:** Por defecto, itera sobre las claves. Para iterar sobre valores o pares clave-valor, se usan los métodos `.values()` y `.items()`.
 
 #### Sintaxis básica
 
@@ -195,7 +94,7 @@ for elemento in secuencia:
     procesar(elemento)
 ```
 
-#### For con range()
+#### For con `range()`
 
 ```python
 # Números del 0 al 4
@@ -211,7 +110,7 @@ for i in range(2, 11, 2):
     print(i)  # 2, 4, 6, 8, 10
 ```
 
-#### For con listas
+#### For con `listas`
 
 ```python
 # Iterar directamente sobre elementos
@@ -228,7 +127,7 @@ for i in range(len(frutas)):
     print(f"La fruta en posición {i} es {frutas[i]}")
 ```
 
-#### For con strings
+#### For con `strings`
 
 ```python
 palabra = "Python"
@@ -247,7 +146,7 @@ for letra in palabra:
 print(f"'{palabra}' tiene {contador_vocales} vocales")
 ```
 
-#### For con diccionarios
+#### For con `diccionarios`
 
 ```python
 estudiante = {
@@ -270,109 +169,17 @@ for clave, valor in estudiante.items():
     print(f"{clave.upper():<10} {valor}")
 ```
 
-#### Ejemplos prácticos con for
-
-**Análisis de datos**
-
-```python
-def analizar_ventas(ventas):
-    """Analiza una lista de ventas mensuales."""
-    total = 0
-    mes_mejor = 0
-    venta_maxima = 0
-    
-    print("📊 ANÁLISIS DE VENTAS ANUALES")
-    print("="*40)
-    
-    for mes, venta in enumerate(ventas, 1):
-        total += venta
-        print(f"Mes {mes:2d}: {venta:>8.2f}€")
-        
-        if venta > venta_maxima:
-            venta_maxima = venta
-            mes_mejor = mes
-    
-    promedio = total / len(ventas)
-    
-    print("="*40)
-    print(f"Total anual:    {total:>8.2f}€")
-    print(f"Promedio:       {promedio:>8.2f}€")
-    print(f"Mejor mes:      {mes_mejor} ({venta_maxima:.2f}€)")
-
-# Datos de ejemplo
-ventas_2024 = [12500, 13200, 11800, 14500, 15200, 16800,
-               18500, 17200, 15800, 14200, 13500, 19500]
-
-# analizar_ventas(ventas_2024)  # Descomenta para probar
-```
-
-**Tabla de multiplicar**
-
-```python
-def tabla_multiplicar(numero, hasta=10):
-    """Genera la tabla de multiplicar de un número."""
-    print(f"📋 TABLA DEL {numero}")
-    print("-" * 20)
-    
-    for i in range(1, hasta + 1):
-        resultado = numero * i
-        print(f"{numero} × {i:2d} = {resultado:3d}")
-
-# tabla_multiplicar(7)  # Descomenta para probar
-```
-
-**Procesamiento de texto**
-
-```python
-def estadisticas_texto(texto):
-    """Calcula estadísticas de un texto."""
-    palabras = texto.lower().split()
-    
-    # Contar caracteres
-    total_caracteres = len(texto)
-    caracteres_sin_espacios = len(texto.replace(' ', ''))
-    
-    # Contar palabras
-    total_palabras = len(palabras)
-    
-    # Contar frecuencia de palabras
-    frecuencia = {}
-    for palabra in palabras:
-        # Limpiar signos de puntuación básicos
-        palabra_limpia = palabra.strip('.,;:!?')
-        if palabra_limpia:
-            frecuencia[palabra_limpia] = frecuencia.get(palabra_limpia, 0) + 1
-    
-    # Mostrar estadísticas
-    print("📖 ESTADÍSTICAS DEL TEXTO")
-    print("="*30)
-    print(f"Caracteres:         {total_caracteres}")
-    print(f"Caracteres (sin espacios): {caracteres_sin_espacios}")
-    print(f"Palabras:           {total_palabras}")
-    print(f"Palabras únicas:    {len(frecuencia)}")
-    
-    # Top 5 palabras más frecuentes
-    palabras_ordenadas = sorted(frecuencia.items(), key=lambda x: x[1], reverse=True)
-    print("\n🔝 TOP 5 PALABRAS MÁS FRECUENTES:")
-    for i, (palabra, frecuencia_palabra) in enumerate(palabras_ordenadas[:5], 1):
-        print(f"{i}. {palabra}: {frecuencia_palabra} veces")
-
-# texto_ejemplo = """
-# Python es un lenguaje de programación potente y fácil de aprender.
-# Python tiene estructuras de datos eficientes y un enfoque simple
-# pero efectivo a la programación orientada a objetos.
-# """
-
-# estadisticas_texto(texto_ejemplo)  # Descomenta para probar
-```
+***
 
 ### 6.4. Sentencias de control de bucles
 
-Python proporciona sentencias especiales para controlar el flujo dentro de los bucles.
+Python ofrece sentencias para controlar el flujo de ejecución dentro de un bucle:
 
-#### break: Salir del bucle
+* **`break`**: Termina el bucle de forma inmediata y prematura. El programa continúa con la primera instrucción después del bucle.
+* **`continue`**: Salta el resto del código de la iteración actual y pasa directamente a la siguiente iteración.
+* **`pass`**: Es una instrucción nula. No hace nada y se utiliza como un marcador de posición (_placeholder_) donde sintácticamente se requiere una instrucción, pero no se quiere ejecutar ningún código.
 
-La sentencia `break` termina inmediatamente el bucle actual y continúa con la siguiente instrucción después del bucle.
+#### Ejemplo de uso de `break`
 
 ```python
 # Buscar un elemento específico
@@ -388,27 +195,7 @@ else:
     print(f"No se encontró {objetivo}")
 ```
 
-```python
-# Bucle while con break
-def pedir_numero_positivo():
-    """Pide números hasta obtener uno positivo."""
-    while True:  # Bucle infinito controlado
-        try:
-            numero = float(input("Introduce un número positivo: "))
-            if numero > 0:
-                print(f"¡Perfecto! Has introducido: {numero}")
-                break  # Salir del bucle
-            else:
-                print("El número debe ser positivo")
-        except ValueError:
-            print("Debes introducir un número válido")
-
-# pedir_numero_positivo()  # Descomenta para probar
-```
-
-#### continue: Saltar a la siguiente iteración
-
-La sentencia `continue` salta el resto del código en la iteración actual y pasa a la siguiente iteración del bucle.
+#### Ejemplo de uso de `continue`
 
 ```python
 # Procesar solo números pares
@@ -423,42 +210,7 @@ for numero in numeros:
     print(f"{numero}² = {cuadrado}")
 ```
 
-```python
-# Validar lista de emails
-emails = [
-    "usuario@ejemplo.com",
-    "email_invalido",  # Inválido
-    "",               # Vacío
-    "otro@sitio.org",
-    "sin_arroba.com", # Inválido
-    "valido@test.es"
-]
-
-emails_validos = []
-for email in emails:
-    # Saltar emails vacíos
-    if not email:
-        continue
-    
-    # Saltar emails sin @
-    if "@" not in email:
-        print(f"❌ Email inválido: {email}")
-        continue
-    
-    # Saltar emails sin punto
-    if "." not in email:
-        print(f"❌ Email inválido: {email}")
-        continue
-    
-    emails_validos.append(email)
-    print(f"✅ Email válido: {email}")
-
-print(f"\nEmails válidos encontrados: {len(emails_validos)}")
-```
-
-#### pass: Instrucción vacía
-
-La sentencia `pass` no hace nada. Se usa como placeholder cuando necesitamos sintaxis válida pero no queremos ejecutar código.
+#### Ejemplo de uso de `pass`
 
 ```python
 # Placeholder durante desarrollo
@@ -477,54 +229,35 @@ def funcion_en_desarrollo():
         pass  # Por ahora, ignorar errores
 ```
 
-#### Cláusula else en bucles
+#### Cláusula `else` en bucles
 
-Una característica única de Python es que los bucles pueden tener una cláusula `else` que se ejecuta **solo si el bucle termina normalmente** (sin `break`).
+Una característica particular de Python es la cláusula `else` en los bucles. El bloque de código `else` <mark style="background-color:yellow;">**se ejecuta solo si el bucle finaliza de forma natural**</mark>, es decir, sin haber sido interrumpido por una sentencia `break`. Es ideal para código que debe ejecutarse cuando una búsqueda no tiene éxito.
 
 ```python
-# Buscar elemento con else
 def buscar_numero(lista, objetivo):
-    """Busca un número en una lista."""
+    """Busca un número en una lista e informa si no lo encuentra."""
     for numero in lista:
         if numero == objetivo:
-            print(f"✅ Encontrado: {objetivo}")
+            print(f"Encontrado: {objetivo}")
             break
     else:
-        # Se ejecuta solo si NO se hizo break
-        print(f"❌ No se encontró: {objetivo}")
+        # Se ejecuta solo si el bucle for termina sin un break
+        print(f"No se encontró: {objetivo}")
 
 numeros = [1, 3, 5, 7, 9]
-buscar_numero(numeros, 5)  # Encontrado
-buscar_numero(numeros, 6)  # No encontrado
+buscar_numero(numeros, 5) # Salida: Encontrado: 5
+buscar_numero(numeros, 6) # Salida: No se encontró: 6
 ```
 
-```python
-# Validar contraseña con intentos limitados
-def validar_acceso():
-    """Permite 3 intentos para introducir la contraseña correcta."""
-    password_correcta = "python123"
-    intentos_maximos = 3
-    
-    for intento in range(intentos_maximos):
-        password = input(f"Contraseña (intento {intento + 1}/{intentos_maximos}): ")
-        
-        if password == password_correcta:
-            print("🔓 Acceso concedido")
-            break
-    else:
-        # Se ejecuta solo si se agotaron todos los intentos
-        print("🔒 Acceso denegado - demasiados intentos fallidos")
-
-# validar_acceso()  # Descomenta para probar
-```
+***
 
 ### 6.5. Bucles anidados
 
-Los bucles anidados son bucles dentro de otros bucles. Son útiles para trabajar con estructuras bidimensionales (matrices, tablas) o para generar combinaciones.
+Un bucle anidado es **un bucle dentro de otro**. Son útiles para trabajar con estructuras de datos bidimensionales, como matrices (listas de listas), o para generar patrones como las tablas de multiplicar. Es importante usarlos con precaución, ya que su complejidad computacional puede crecer rápidamente y afectar al rendimiento.
 
 ```python
 # Tabla de multiplicar completa
-print("📋 TABLAS DE MULTIPLICAR (1-5)")
+print("TABLAS DE MULTIPLICAR (1-5)")
 print("="*50)
 
 for tabla in range(1, 6):
@@ -534,66 +267,21 @@ for tabla in range(1, 6):
         print(f"  {tabla} × {multiplicador:2d} = {resultado:2d}")
 ```
 
-```python
-# Generar matriz
-def crear_matriz(filas, columnas):
-    """Crea una matriz de números secuenciales."""
-    matriz = []
-    numero = 1
-    
-    for fila in range(filas):
-        fila_actual = []
-        for columna in range(columnas):
-            fila_actual.append(numero)
-            numero += 1
-        matriz.append(fila_actual)
-    
-    return matriz
-
-def mostrar_matriz(matriz):
-    """Muestra una matriz formateada."""
-    for fila in matriz:
-        for elemento in fila:
-            print(f"{elemento:3d}", end=" ")
-        print()  # Nueva línea después de cada fila
-
-# matriz_3x4 = crear_matriz(3, 4)
-# mostrar_matriz(matriz_3x4)
-```
-
-#### ⚠️ Cuidado con la eficiencia
-
-Los bucles anidados pueden ser costosos computacionalmente. La complejidad crece exponencialmente:
-
-```python
-import time
-
-def ejemplo_eficiencia():
-    """Demuestra el costo de bucles anidados."""
-    tamaños = [100, 500, 1000]
-    
-    for tamaño in tamaños:
-        inicio = time.time()
-        
-        contador = 0
-        for i in range(tamaño):
-            for j in range(tamaño):
-                contador += 1  # Operación simple
-        
-        fin = time.time()
-        tiempo = fin - inicio
-        
-        print(f"Tamaño {tamaño}x{tamaño}: {tiempo:.4f} segundos")
-        print(f"  Operaciones: {contador:,}")
-
-# ejemplo_eficiencia()  # Descomenta para probar (puede tardar)
-```
+***
 
 ### 6.6. Técnicas avanzadas con bucles
 
 #### Comprensión de listas (List Comprehensions)
 
-Una forma concisa de crear listas usando bucles:
+La **comprensión de listas** (_list comprehensions_) es una sintaxis elegante y "pythónica" para **crear listas de forma concisa y eficiente a partir de un iterable**.&#x20;
+
+**Sintaxis básica**
+
+```python
+[expresion for item in iterable if condicion]
+```
+
+**Ejemplo de uso**
 
 ```python
 # Forma tradicional
@@ -615,29 +303,102 @@ palabras_largas = [palabra.upper() for palabra in palabras if len(palabra) > 4]
 print(palabras_largas)  # ['PYTHON', 'JAVASCRIPT']
 ```
 
-#### enumerate() y zip()
+#### Función  `enumerate()`
 
-Funciones útiles para bucles avanzados:
+Permite **recorrer una secuencia (lista, tupla, cadena, etc.) obteniendo a la vez el índice y el valor** de cada elemento.\
+Es una alternativa más limpia y legible que usar un contador manual.
+
+**Sintaxis:**
 
 ```python
-# enumerate(): obtener índice y elemento
-nombres = ["Ana", "Carlos", "María", "Jorge"]
-
-for i, nombre in enumerate(nombres, 1):
-    print(f"{i}. {nombre}")
-
-# zip(): iterar múltiples listas simultáneamente
-nombres = ["Ana", "Carlos", "María"]
-edades = [25, 30, 28]
-ciudades = ["Madrid", "Barcelona", "Valencia"]
-
-for nombre, edad, ciudad in zip(nombres, edades, ciudades):
-    print(f"{nombre}, {edad} años, vive en {ciudad}")
+for indice, elemento in enumerate(iterable, inicio=0):
+    ...
 ```
 
-### 6.7. Casos prácticos avanzados
+* `iterable`: la secuencia a recorrer.
+* `inicio`: (opcional) valor inicial del índice (por defecto `0`).
 
-#### Simulador de cajero automático
+**Ejemplo:**
+
+```python
+nombres = ["Ana", "Luis", "María"]
+for i, nombre in enumerate(nombres, start=1):
+    print(f"{i}. {nombre}")
+```
+
+**Salida:**
+
+```
+1. Ana
+2. Luis
+3. María
+```
+
+{% hint style="success" %}
+**Ventaja:** evita crear variables como `contador = 0` y mantenerlas manualmente.
+{% endhint %}
+
+#### Función  `zip()`
+
+Permite **combinar dos o más secuencias** en una sola, agrupando los elementos que ocupan la misma posición. El resultado es un _iterador de tuplas_.
+
+**Sintaxis:**
+
+```python
+for elem1, elem2, ... in zip(iterable1, iterable2, ...):
+    ...
+```
+
+**Ejemplo:**
+
+```python
+nombres = ["Ana", "Luis", "María"]
+edades = [23, 31, 19]
+
+for nombre, edad in zip(nombres, edades):
+    print(f"{nombre} tiene {edad} años.")
+```
+
+**Salida:**
+
+```
+Ana tiene 23 años.
+Luis tiene 31 años.
+María tiene 19 años.
+```
+
+<mark style="background-color:yellow;">💡</mark> <mark style="background-color:yellow;"></mark><mark style="background-color:yellow;">**Notas:**</mark>
+
+* `zip()` se detiene cuando una de las listas termina.
+*   Puedes convertir el resultado en lista:
+
+    ```python
+    list(zip(nombres, edades))
+    # [('Ana', 23), ('Luis', 31), ('María', 19)]
+    ```
+
+#### **Combinando `enumerate()` y `zip()`**
+
+Puedes usar `enumerate()` y `zip()` juntos para recorrer **varias secuencias con índices**:
+
+```python
+for i, (nombre, edad) in enumerate(zip(nombres, edades), start=1):
+    print(f"{i}. {nombre} ({edad} años)")
+```
+
+**Salida:**
+
+```
+1. Ana (23 años)
+2. Luis (31 años)
+3. María (19 años)
+```
+
+***
+
+### 6.7. Caso práctico: Simulador de cajero automático
+
+Este ejemplo completo integra bucles `while`, condicionales `if-elif-else`, manejo de entrada y formateo de salida para simular un cajero automático simple.
 
 ```python
 def cajero_automatico():
@@ -646,7 +407,7 @@ def cajero_automatico():
     historial = []
     
     while True:
-        print(f"\n💰 CAJERO AUTOMÁTICO")
+        print(f"\nCAJERO AUTOMÁTICO")
         print(f"Saldo actual: {saldo:.2f}€")
         print("="*30)
         print("1. Consultar saldo")
@@ -655,88 +416,47 @@ def cajero_automatico():
         print("4. Ver historial")
         print("5. Salir")
         print("-"*30)
-        
         opcion = input("Selecciona una opción: ").strip()
         
         if opcion == "1":
-            print(f"💵 Tu saldo es: {saldo:.2f}€")
-            
+            print(f"Tu saldo es: {saldo:.2f}€")
         elif opcion == "2":
             try:
                 cantidad = float(input("Cantidad a retirar: "))
-                if cantidad <= 0:
-                    print("❌ La cantidad debe ser positiva")
-                elif cantidad > saldo:
-                    print("❌ Saldo insuficiente")
-                else:
+                if 0 < cantidad <= saldo:
                     saldo -= cantidad
                     historial.append(f"Retiro: -{cantidad:.2f}€")
-                    print(f"✅ Has retirado {cantidad:.2f}€")
+                    print(f"Has retirado {cantidad:.2f}€")
+                else:
+                    print("Cantidad inválida o saldo insuficiente")
             except ValueError:
-                print("❌ Cantidad inválida")
-                
+                print("Cantidad inválida")
         elif opcion == "3":
             try:
                 cantidad = float(input("Cantidad a depositar: "))
-                if cantidad <= 0:
-                    print("❌ La cantidad debe ser positiva")
-                else:
+                if cantidad > 0:
                     saldo += cantidad
                     historial.append(f"Depósito: +{cantidad:.2f}€")
-                    print(f"✅ Has depositado {cantidad:.2f}€")
+                    print(f"Has depositado {cantidad:.2f}€")
+                else:
+                    print("La cantidad debe ser positiva")
             except ValueError:
-                print("❌ Cantidad inválida")
-                
+                print("Cantidad inválida")
         elif opcion == "4":
             if historial:
-                print("📋 HISTORIAL DE TRANSACCIONES:")
-                for i, transaccion in enumerate(historial, 1):
-                    print(f"  {i}. {transaccion}")
+                print("HISTORIAL DE TRANSACCIONES:")
+                for transaccion in historial:
+                    print(f" • {transaccion}")
             else:
-                print("📋 No hay transacciones")
-                
+                print("No hay transacciones")
         elif opcion == "5":
-            print("👋 ¡Gracias por usar nuestro cajero!")
+            print("¡Gracias por usar nuestro cajero!")
             break
-            
         else:
-            print("❌ Opción no válida")
-
-# cajero_automatico()  # Descomenta para probar
+            print("Opción no válida")
 ```
 
-#### Generador de patrones
-
-```python
-def generar_patron_triangular(altura):
-    """Genera un patrón triangular de asteriscos."""
-    print(f"🔺 PATRÓN TRIANGULAR (altura: {altura})")
-    
-    for fila in range(1, altura + 1):
-        espacios = " " * (altura - fila)
-        asteriscos = "*" * (2 * fila - 1)
-        print(f"{espacios}{asteriscos}")
-
-def generar_patron_diamante(tamaño):
-    """Genera un patrón de diamante."""
-    print(f"💎 PATRÓN DIAMANTE (tamaño: {tamaño})")
-    
-    # Parte superior (incluyendo centro)
-    for i in range(tamaño):
-        espacios = " " * (tamaño - i - 1)
-        asteriscos = "*" * (2 * i + 1)
-        print(f"{espacios}{asteriscos}")
-    
-    # Parte inferior
-    for i in range(tamaño - 2, -1, -1):
-        espacios = " " * (tamaño - i - 1)
-        asteriscos = "*" * (2 * i + 1)
-        print(f"{espacios}{asteriscos}")
-
-# generar_patron_triangular(5)
-# print()
-# generar_patron_diamante(4)
-```
+***
 
 ### Resumen del Capítulo
 
@@ -769,3 +489,5 @@ Crea un programa que:
 3. Use `for` para mostrar listas de tareas y estadísticas
 4. Implemente búsqueda con `break` y filtrado con `continue`
 5. Use bucles anidados para organizar tareas por categorías
+
+Ahora que sabemos cómo repetir acciones, podemos explorar la "caja de herramientas" que Python nos ofrece de serie: un conjunto de funciones integradas que facilitan y potencian el trabajo con bucles, iterables y otros tipos de datos.
