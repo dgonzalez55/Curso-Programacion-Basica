@@ -2,7 +2,7 @@
 
 ### Tabla de Contenidos
 
-#### 🪚 [Capítulo 1: Anatomía de un programa Python](broken-reference)
+#### 🪚 [Capítulo 1: Anatomía de un programa Python](capitulo-1-anatomia-de-un-programa-python.md)
 
 * 1.1. Introducción: La importancia de la estructura
 * 1.2. Estructura típica de un script Python
@@ -11,9 +11,9 @@
 * 1.5. Entrada, proceso y salida (modelo IPO)
 * 1.6. El shebang y ejecución de scripts
 
-#### 💾 [Capítulo 2: Variables, constantes y tipos](broken-reference)
+#### 💾 [Capítulo 2: Variables, constantes y tipos](capitulo-2-variables-constantes-y-tipos.md)
 
-* 2.1. Identificadores, reglas y buenas prácticas
+* 2.1. Identificadores: Reglas y buenas prácticas
 * 2.2. Tipado fuerte y dinámico en Python
 * 2.3. Tipos de datos básicos y colecciones
 * 2.4. Constantes y su uso en Python
