@@ -8,7 +8,7 @@ Las **expresiones** son los bloques de construcción fundamentales de la lógica
 
 #### Tipos de expresiones
 
-**1. Expresiones literales**: Valores constantes.
+<mark style="background-color:$primary;">**Expresiones literales**</mark>: Valores constantes.
 
 ```python
 42                    # Expresión literal entera
@@ -17,7 +17,7 @@ Las **expresiones** son los bloques de construcción fundamentales de la lógica
 True                 # Expresión literal booleana
 ```
 
-**2. Expresiones con variables**: Utilizan identificadores que referencian valores.
+<mark style="background-color:$primary;">**Expresiones con variables**</mark>: Utilizan identificadores que referencian valores.
 
 ```python
 edad                 # Variable simple
@@ -26,7 +26,7 @@ lista[0]            # Acceso a elemento
 diccionario["clave"] # Acceso a diccionario
 ```
 
-**3. Expresiones aritméticas**: Combinan valores numéricos con operadores matemáticos.
+<mark style="background-color:$primary;">**Expresiones aritméticas**</mark>: Combinan valores numéricos con operadores matemáticos.
 
 ```python
 3 + 5                # Suma simple
@@ -34,7 +34,7 @@ edad * 2             # Multiplicación con variable
 (radio ** 2) * 3.14  # Expresión compleja con paréntesis
 ```
 
-**4. Expresiones lógicas**: Se evalúan como `True` o `False` y se usan en estructuras de control.
+<mark style="background-color:$primary;">**Expresiones lógicas**</mark>: Se evalúan como `True` o `False` y se usan en estructuras de control.
 
 ```python
 edad >= 18           # Comparación
@@ -42,13 +42,15 @@ activo and verificado # Combinación lógica
 not usuario_bloqueado # Negación
 ```
 
-**5. Expresiones con funciones**: Incluyen llamadas a funciones que devuelven un valor.
+<mark style="background-color:$primary;">**Expresiones con funciones**</mark>: Incluyen llamadas a funciones que devuelven un valor.
 
 ```python
 len(lista)           # Función incorporada
 max(a, b, c)        # Función con múltiples argumentos
 math.sqrt(25)       # Función de módulo
 ```
+
+***
 
 ### 3.2. Operadores Aritméticos
 
@@ -125,6 +127,8 @@ for i in range(10):
     print(f"Posición {i}: {color_actual}")
 ```
 
+***
+
 ### 3.3. Operadores de Cadenas
 
 Las cadenas de texto tienen operadores específicos:
@@ -175,6 +179,8 @@ print(texto[::2])    # Pto rgamn
 print(texto[::-1])   # gnimmargorP nohtyP (reverso)
 ```
 
+***
+
 ### 3.4. Operadores de Asignación
 
 Los operadores de asignación compuesta son una forma abreviada de modificar el valor de una variable.
@@ -213,6 +219,8 @@ numeros = [1, 2, 3]
 numeros += [4, 5]    # numeros = [1, 2, 3, 4, 5]
 numeros *= 2         # numeros = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
 ```
+
+***
 
 ### 3.5. Operadores de Comparación y de Identidad
 
@@ -292,6 +300,8 @@ a, b, c = 5, 10, 15
 print(a < b < c)         # True
 print(a < b > c)         # False
 ```
+
+***
 
 ### 3.6. Operadores Lógicos
 
@@ -379,6 +389,8 @@ if divisor != 0 and 10 / divisor > 2:
     print("El resultado es mayor que 2")
 ```
 
+***
+
 ### 3.7. Operadores de Pertenencia
 
 Los operadores `in` y `not in` comprueban si un elemento existe dentro de una secuencia (como listas, tuplas, cadenas o diccionarios).
@@ -410,6 +422,8 @@ colores = {"rojo", "verde", "azul"}
 print("rojo" in colores)     # True
 print("amarillo" in colores) # False
 ```
+
+***
 
 ### 3.8. Precedencia de Operadores
 
@@ -447,6 +461,8 @@ precio_final = precio_con_impuesto - descuento
 precio_final = precio_base * (1 + impuesto) - descuento
 ```
 
+***
+
 ### 3.9. Operadores Binarios (Avanzado)
 
 Python también incluye operadores a nivel de bits (`&`, `|`, `^`, `~`, `<<`, `>>`) que manipulan números enteros en su representación binaria. Su uso es menos común y se reserva para programación de bajo nivel, optimizaciones específicas o algoritmos criptográficos.
@@ -481,6 +497,8 @@ print(f"XOR: {num_binario1 ^ num_binario2:08b} ({num_binario1 ^ num_binario2})")
 print(f"Despl. izq: {num_binario1 << 1:08b} ({num_binario1 << 1})")  # 10100 (20)
 print(f"Despl. der: {num_binario1 >> 1:08b} ({num_binario1 >> 1})")  # 0101 (5)
 ```
+
+***
 
 ### Resumen del Capítulo
 

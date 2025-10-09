@@ -12,6 +12,8 @@ Imagina la memoria de tu ordenador como una gran cómoda con infinidad de cajone
 
 Usar variables nos permite escribir programas flexibles que reaccionan a diferentes datos de entrada y situaciones.
 
+***
+
 ### 5.2. El Enfoque de Python: Tipado Dinámico y Fuerte
 
 Cada lenguaje de programación tiene su propia forma de gestionar las variables. Python se caracteriza por dos conceptos clave que lo hacen muy flexible pero también muy seguro: es de tipado dinámico y fuertemente tipado.
@@ -54,12 +56,16 @@ resultado_numerico = numero + int(texto) # resultado_numerico será 15
 resultado_texto = str(numero) + texto # resultado_texto será "510"
 ```
 
-<mark style="background-color:yellow;">**💡 Contexto Adicional:**</mark> **¿Cómo lo hacen otros lenguajes?**
+{% hint style="info" %}
+**Contexto Adicional:** **¿Cómo lo hacen otros lenguajes?**
 
 * **Java/C++ (Tipado Estático y Fuerte)**: Son el opuesto a Python. Debes declarar el tipo de cada variable (`int numero = 10;`) y este no puede cambiar. Son rígidos pero muy seguros y eficientes, ya que todos los tipos se conocen antes de la ejecución.
 * **JavaScript (Tipado Dinámico y Débil)**: Es dinámico como Python, pero de tipado débil. Esto significa que intenta "adivinar" lo que quieres hacer con tipos incompatibles, a menudo con resultados inesperados. Por ejemplo, en JavaScript, `5 + "10"` no da un error, sino que produce la cadena `"510"`. Esto puede ocultar errores difíciles de encontrar.
+{% endhint %}
 
 Finalmente, es importante saber que en Python las variables deben ser inicializadas (darles un primer valor) antes de poder usarlas, y que la gestión de memoria (reservar y liberar los "cajones") es totalmente automática gracias a un proceso llamado "recolector de basura" (**garbage collector**).
+
+***
 
 ### 5.3. Tipos de Datos Fundamentales
 
@@ -85,7 +91,9 @@ precio_producto = 19.99
 altura_metros = 1.78
 ```
 
-<mark style="background-color:$warning;">**⚠️ Atención a la precisión:**</mark> Los `float` no siempre son exactos debido a cómo se representan internamente en binario.
+{% hint style="warning" %}
+**Atención a la precisión:** Los `float` no siempre son exactos debido a cómo se representan internamente en binario.
+{% endhint %}
 
 ```python
 resultado = 0.1 + 0.2
@@ -141,6 +149,8 @@ print(isinstance(valor, float))  # True
 print(isinstance(valor, int))    # False
 print(isinstance(valor, (int, float))) # True (¿es un int O un float?)
 ```
+
+***
 
 ### 5.4. Operadores Aritméticos y Precedencia
 

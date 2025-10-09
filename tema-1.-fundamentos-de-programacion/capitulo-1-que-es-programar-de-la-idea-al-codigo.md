@@ -21,6 +21,8 @@ Esta dualidad entre la libertad creativa y la necesidad de precisión es lo que 
 
 Para navegar esta dualidad con éxito, necesitamos una hoja de ruta, una receta que describa nuestra solución de forma clara antes de escribir una sola línea de código. Esa receta es el **algoritmo**.
 
+***
+
 ### 1.2. El Algoritmo: La Receta del Éxito
 
 Un **algoritmo** es el pilar fundamental de cualquier programa. Es una **secuencia de pasos finitos, ordenados y no ambiguos, diseñados para resolver un problema específico**. Piénsalo como una receta de cocina: te indica los ingredientes (_**datos de entrada**_), una serie de pasos precisos a seguir (_**proceso**_) y el plato final que obtendrás (_**resultado**_). Si la receta es ambigua ("añade un poco de sal"), el resultado será inconsistente. Si los pasos están desordenados, el plato será un desastre.
@@ -44,7 +46,8 @@ Para que una secuencia de pasos sea considerada un algoritmo válido, debe cumpl
 * ❌No es finito: "Continúa lanzando un dado hasta que salga un 6". (Teóricamente, podría no terminar nunca).
 * ✅Es finito: "Lanza un dado 100 veces y cuenta cuántas veces ha salido el 6".
 
-<mark style="background-color:yellow;">💡</mark> <mark style="background-color:yellow;"></mark><mark style="background-color:yellow;">**Buenas Prácticas:**</mark> <mark style="background-color:yellow;"></mark><mark style="background-color:yellow;">Piensa antes de picar código</mark>
+{% hint style="success" %}
+**Buenas Prácticas:** Piensa antes de picar código
 
 Muchos programadores novatos sienten la tentación de empezar a escribir código inmediatamente. Sin embargo, **invertir tiempo en diseñar un buen algoritmo** primero es una de las prácticas más rentables que existen:
 
@@ -52,8 +55,11 @@ Muchos programadores novatos sienten la tentación de empezar a escribir código
 * **Reduce Errores**: Es mucho más fácil y rápido detectar un fallo lógico en un diagrama o pseudocódigo que en cientos de líneas de código.
 * **Optimiza la Solución**: Permite comparar diferentes enfoques y elegir el más eficiente sobre el papel.
 * **Ahorra Tiempo a Largo Plazo**: El tiempo "perdido" diseñando se recupera con creces al evitar horas de depuración y reescritura de código.
+{% endhint %}
 
 Una vez que tenemos nuestro algoritmo, nuestra "receta", el siguiente paso es traducirlo a un idioma que la máquina pueda entender y ejecutar.
+
+***
 
 ### 1.3. El Programa: La Materialización del Algoritmo
 

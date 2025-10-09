@@ -4,7 +4,7 @@
 
 Con esta base sólida, estás perfectamente equipado para adentrarte en temas más avanzados. Ya tienes el andamiaje mental para entender cómo se construyen programas complejos, cómo se organizan y cómo interactúan con estructuras de datos más sofisticadas.
 
-**Preguntas de Autoevaluación Final**
+### **Preguntas de Autoevaluación Final**
 
 1. Describe con tus propias palabras la diferencia entre un algoritmo y un programa.
 2. ¿Qué significa que Python tiene un tipado dinámico pero fuerte? Pon un ejemplo para ilustrar cada característica.

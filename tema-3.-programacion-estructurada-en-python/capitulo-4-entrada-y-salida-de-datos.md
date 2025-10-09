@@ -14,7 +14,7 @@ variable = input("Mensaje para el usuario: ")
 
 #### Características fundamentales
 
-**1. Siempre devuelve string**: Independientemente de lo que introduzca el usuario, `input()` siempre devuelve un objeto de tipo `str`.
+<mark style="background-color:$primary;">**Siempre devuelve string**</mark>: Independientemente de lo que introduzca el usuario, `input()` siempre devuelve un objeto de tipo `str`.
 
 ```python
 nombre = input("¿Cuál es tu nombre? ")
@@ -26,7 +26,7 @@ print(f"Tipo: {type(edad_str)}")  # <class 'str'> (aunque introduzcas un número
 print(f"Valor: {edad_str}")
 ```
 
-**2. Acepta un mensaje opcional**: El parámetro es opcional, pero es fundamental para la usabilidad.
+<mark style="background-color:$primary;">**Acepta un mensaje opcional**</mark>: El parámetro es opcional, pero es fundamental para la usabilidad.
 
 ```python
 # Con mensaje (recomendado)
@@ -36,7 +36,7 @@ nombre = input("Introduce tu nombre: ")
 edad = input()  # El usuario no sabe qué introducir
 ```
 
-**3. Finaliza con Enter**: La entrada se completa cuando el usuario presiona la tecla Enter.
+<mark style="background-color:$primary;">**Finaliza con Enter**</mark>: La entrada se completa cuando el usuario presiona la tecla Enter.
 
 #### Ejemplos prácticos básicos
 
@@ -55,7 +55,9 @@ descripcion = input()
 print(f"Gracias por compartir: {descripcion}")
 ```
 
-💡Un <mark style="background-color:$warning;">**problema común**</mark> es que los usuarios pueden introducir **espacios en blanco al principio o al final** de su respuesta. Esto se puede solucionar fácilmente usando el método **`.strip()`** para limpiar la cadena de entrada.
+{% hint style="warning" %}
+Un <mark style="background-color:$warning;">**problema común**</mark> es que los usuarios pueden introducir **espacios en blanco al principio o al final** de su respuesta. Esto se puede solucionar fácilmente usando el método **`.strip()`** para limpiar la cadena de entrada.
+{% endhint %}
 
 ```python
 # ❌ Problema: espacios no deseados
@@ -66,6 +68,8 @@ print(f"Hola '{nombre}'")     # Hola '  Ana  '
 nombre = input("Tu nombre: ").strip()
 print(f"Hola '{nombre}'")     # Hola 'Ana'
 ```
+
+***
 
 ### 4.2. Conversión de tipos en la entrada
 
@@ -82,7 +86,9 @@ precio = float(input("Introduce el precio del producto: "))
 precio_con_iva = precio * 1.21
 ```
 
-Esta conversión puede fallar. Si el usuario introduce texto en lugar de un número, el programa se detendrá con un error `ValueError`. La forma robusta y profesional de manejar esta situación es utilizando una **estructura `try-except`**. Para facilitar esta tarea, podemos crear una función auxiliar reutilizable.
+{% hint style="warning" %}
+Esta conversión puede fallar. Si el usuario introduce texto en lugar de un número, el programa se detendrá con un error **`ValueError`**. La forma robusta y profesional de manejar esta situación es utilizando una **estructura `try-except`**. Para facilitar esta tarea, podemos crear una función auxiliar reutilizable.
+{% endhint %}
 
 ```python
 def input_numerico(mensaje, tipo=int, minimo=None, maximo=None):
@@ -115,6 +121,8 @@ edad = input_numerico("Tu edad (0-120): ", int, 0, 120)
 salario = input_numerico("Tu salario: ", float, 0)
 ```
 
+***
+
 ### 4.3. Función `print()`: escritura y formateo
 
 La función **`print()`** es la herramienta estándar para mostrar información en la consola. Es más versátil de lo que parece, gracias a sus parámetros opcionales:
@@ -122,6 +130,9 @@ La función **`print()`** es la herramienta estándar para mostrar información 
 * <mark style="background-color:$primary;">**Múltiples valores**</mark>: Se pueden pasar varios argumentos separados por comas, y `print()` los mostrará en una misma línea.
 * <mark style="background-color:$primary;">**Parámetro**</mark><mark style="background-color:$primary;">**&#x20;**</mark><mark style="background-color:$primary;">**`sep`**</mark>: Permite personalizar el separador que se utiliza entre los argumentos (por defecto es un espacio).
 * <mark style="background-color:$primary;">**Parámetro**</mark><mark style="background-color:$primary;">**&#x20;**</mark><mark style="background-color:$primary;">**`end`**</mark>: Permite cambiar el carácter que se añade al final de la línea (por defecto es un salto de línea `\n`).
+* <mark style="background-color:$primary;">**Parámetro**</mark><mark style="background-color:$primary;">**&#x20;**</mark><mark style="background-color:$primary;">**`flush`**</mark>: Por defecto, Python **almacena en un buffer** lo que se imprime y lo envía de manera automática cuando corresponde. Esto puede causar que veas retraso en la salida en ciertos casos, especialmente en programas que imprimen en **tiempo real** o trabajan con **archivos y tuberías**.
+  * `flush=False` → No fuerza el vaciado del buffer. La salida puede retrasarse.
+  * `flush=True` → Fuerza que todo lo que se ha enviado a `print` se muestre inmediatamente.
 
 #### Sintaxis y parámetros de `print()`
 
@@ -131,7 +142,7 @@ print(*values, sep=' ', end='\n', file=sys.stdout, flush=False)
 
 #### Parámetros principales
 
-**1. Múltiples valores**: Puedes pasar varios argumentos
+<mark style="background-color:$primary;">**Múltiples valores**</mark>: Puedes pasar varios argumentos
 
 ```python
 nombre = "Ana"
@@ -142,7 +153,7 @@ print(nombre, edad, ciudad)  # Ana 25 Madrid
 print("Nombre:", nombre, "Edad:", edad)  # Nombre: Ana Edad: 25
 ```
 
-**2. Separador personalizado (sep)**:
+<mark style="background-color:$primary;">**Separador personalizado**</mark>**&#x20;(`sep`)**:
 
 ```python
 print("Python", "Java", "C++", sep=", ")  # Python, Java, C++
@@ -151,7 +162,7 @@ print("A", "B", "C", sep="")              # ABC
 print("X", "Y", "Z", sep=" -> ")          # X -> Y -> Z
 ```
 
-**3. Final personalizado (end)**:
+<mark style="background-color:$primary;">**Final personalizado**</mark>**&#x20;(`end`)**:
 
 ```python
 # Por defecto, print() añade un salto de línea
@@ -168,7 +179,7 @@ for i in range(3):
 print(" ¡Completado!")  # Cargando... ¡Completado!
 ```
 
-**4. Flush inmediato**:
+<mark style="background-color:$primary;">**Flush inmediato**</mark>:
 
 ```python
 import time
@@ -323,9 +334,9 @@ TOTAL:                                 1460.98€
 | `c`           | Carácter                         | `f"{65:c}"` → `"A"`            |
 | `s`           | String                           | `f"{'texto':s}"` → `"texto"`   |
 
-#### Métodos alternativos (contexto histórico)
+#### Métodos alternativos (_legacy_)
 
-**Método .format() (Python 2.6+)**
+**Método `.format()` (**_**Python 2.6+**_**)**
 
 ```python
 # Aún funcional pero menos recomendado
@@ -344,7 +355,7 @@ mensaje = "Hola, me llamo {nom} y tengo {ed} años".format(nom=nombre, ed=edad)
 print(mensaje)
 ```
 
-**Formateo % (estilo C) - Desaconsejado**
+**Formateo `%` (estilo C) -&#x20;**<mark style="background-color:$danger;">**Desaconsejado**</mark>
 
 ```python
 # Método antiguo, evitar en código nuevo

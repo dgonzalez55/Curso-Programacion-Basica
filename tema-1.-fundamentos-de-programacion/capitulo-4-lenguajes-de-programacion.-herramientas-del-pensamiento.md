@@ -179,7 +179,9 @@ Proceso (ejemplo de Java): `Código Fuente -> COMPILADOR -> Bytecode -> MÁQUINA
 
 Este enfoque combina la portabilidad (el mismo _bytecode_ funciona en cualquier Máquina Virtual, independientemente del sistema operativo) con un rendimiento muy superior al de los lenguajes puramente interpretados.
 
-<mark style="background-color:yellow;">**💡 Una distinción clave sobre Python**</mark>: Aunque a menudo clasificamos Python como un lenguaje interpretado por su flujo de trabajo rápido, internamente utiliza un modelo híbrido. Cuando ejecutamos un archivo `.py`, Python lo compila automáticamente a _bytecode_ y lo guarda en un archivo `.pyc`. En ejecuciones posteriores, si el código fuente no ha cambiado, la Máquina Virtual de Python (PVM) ejecutará directamente el _bytecode_, haciendo el proceso más rápido. Esta es una distinción técnica crucial que demuestra un conocimiento profundo del funcionamiento del lenguaje.
+{% hint style="info" %}
+**Una distinción clave sobre Python**: Aunque a menudo clasificamos Python como un lenguaje interpretado por su flujo de trabajo rápido, internamente utiliza un modelo híbrido. Cuando ejecutamos un archivo `.py`, Python lo compila automáticamente a _bytecode_ y lo guarda en un archivo `.pyc`. En ejecuciones posteriores, si el código fuente no ha cambiado, la Máquina Virtual de Python (PVM) ejecutará directamente el _bytecode_, haciendo el proceso más rápido. Esta es una distinción técnica crucial que demuestra un conocimiento profundo del funcionamiento del lenguaje.
+{% endhint %}
 
 #### 4.4.4 ¿Por qué Empezar con un Lenguaje Interpretado?
 

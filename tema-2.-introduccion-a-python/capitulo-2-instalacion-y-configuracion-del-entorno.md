@@ -25,6 +25,8 @@ Los cambios entre versiones no fueron arbitrarios, sino que buscaron modernizar 
 | **Función `input`**      | `input()` evalúa la entrada | `input()` retorna string | El comportamiento de `input()` en Python 2 era un riesgo de seguridad. Python 3 unifica todo en `input()` que siempre devuelve una cadena, siendo más seguro y predecible. |
 | **Comparación de tipos** | `1 < "a"` → `False`         | `1 < "a"` → `TypeError`  | Permitir comparaciones entre tipos incompatibles ocultaba errores. Python 3 es explícito y lanza un error, evitando bugs lógicos.                                          |
 
+***
+
 ### **2.2. Instalación en diferentes sistemas operativos**
 
 A continuación, se detallan los pasos para instalar Python en los sistemas operativos más comunes.
@@ -36,9 +38,11 @@ A continuación, se detallan los pasos para instalar Python en los sistemas oper
 3. <mark style="background-color:$warning;">**¡Importante!**</mark> Marca la casilla "**Add python.exe to PATH**" durante la instalación.
 4. Selecciona "Install Now" para la instalación por defecto, que incluye `pip` y `IDLE`.
 
-<mark style="background-color:yellow;">**💡 Buena Práctica:**</mark> <mark style="background-color:yellow;">**¿Por qué añadir Python al PATH?**</mark>
+{% hint style="warning" %}
+**¿Por qué añadir Python al PATH?**&#x20;
 
 No añadir Python al PATH es como guardar un libro importante en una biblioteca gigante sin registrarlo en el catálogo. Para encontrarlo, tendrías que saber exactamente en qué estantería está (`C:\Python3X\python.exe`). El PATH es ese catálogo para el sistema operativo; le dice dónde buscar los programas ejecutables. Al añadirlo, puedes simplemente escribir `python` en cualquier terminal y el sistema sabrá dónde encontrarlo.
+{% endhint %}
 
 <mark style="background-color:$primary;">**macOS**</mark>&#x20;
 
@@ -71,6 +75,8 @@ sudo dnf install python3 python3-pip
 # CentOS/RHEL
 sudo yum install python3 python3-pip
 ```
+
+***
 
 ### **2.3. Configuración del PATH y verificación**
 
@@ -112,6 +118,8 @@ python
 ```
 
 Esto abre el intérprete interactivo donde puedes ejecutar código Python línea por línea.
+
+***
 
 ### Resumen del Capítulo
 

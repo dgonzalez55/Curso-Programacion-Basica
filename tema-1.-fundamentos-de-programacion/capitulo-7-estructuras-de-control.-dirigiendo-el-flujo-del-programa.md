@@ -10,6 +10,8 @@ Hemos aprendido a manejar datos, pero ¿cómo organizamos las instrucciones para
 
 Dominar estas tres estructuras es dominar la esencia de la programación.
 
+***
+
 ### 7.2. Estructura Secuencial
 
 Es la estructura más simple y natural. Las instrucciones del programa se ejecutan en el orden en que están escritas, de arriba hacia abajo, una después de la otra. Ya hemos estado usando esta estructura en todos los ejemplos anteriores.
@@ -28,6 +30,8 @@ print(resultado) # Salida: 10
 # print(resultado) # NameError: name 'resultado' is not defined
 # resultado = 2 * 5
 ```
+
+***
 
 ### 7.3. Estructuras Alternativas: Tomando Decisiones
 
@@ -107,6 +111,8 @@ match opcion:
         print("Opción no válida.")
 ```
 
+***
+
 ### 7.4. Estructuras Iterativas: El Poder de la Repetición
 
 Las estructuras iterativas, o bucles, permiten ejecutar un bloque de código repetidamente, lo cual es fundamental para automatizar tareas. Todo bucle bien construido sigue cuatro reglas:
@@ -132,9 +138,9 @@ while not (0 <= edad <= 120): # 3. Condición
 print(f"Edad correcta registrada: {edad}")
 ```
 
-<mark style="background-color:$danger;">**⚠️ Peligro: Bucles Infinitos**</mark>
-
-Si olvidas la regla de la actualización, la condición del bucle nunca cambiará a `False`, y el programa se quedará "atascado" repitiendo el mismo código para siempre. Esto se conoce como un bucle infinito.
+{% hint style="danger" %}
+**Peligro: Bucles Infinitos:** Si olvidas la regla de la actualización, la condición del bucle nunca cambiará a `False`, y el programa se quedará "atascado" repitiendo el mismo código para siempre. Esto se conoce como un bucle infinito.
+{% endhint %}
 
 #### **7.4.2 El Bucle `for`**
 
@@ -160,6 +166,8 @@ for i in range(1, 11): # Genera números del 1 al 10
 | **Uso Típico** | El número de iteraciones es desconocido; depende de una condición externa o de la entrada del usuario.                                         | El número de iteraciones es conocido de antemano o se itera sobre los elementos de una secuencia finita.                          |
 | **Control**    | El programador es responsable de gestionar explícitamente la inicialización, la condición de fin y la actualización de la variable de control. | La iteración y la actualización de la variable de control son gestionadas implícitamente por la secuencia (`range`, lista, etc.). |
 | **Riesgo**     | Mayor riesgo de bucles infinitos si se olvida actualizar la variable de control.                                                               | Menor riesgo, ya que el final está definido por la longitud de la secuencia.                                                      |
+
+***
 
 ### 7.5. Control Avanzado de Bucles
 

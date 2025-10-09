@@ -18,6 +18,8 @@ Principios como _"**Beautiful is better than ugly**"_ (Bello es mejor que feo) o
 
 Esta filosofía es análoga a un buen diseño arquitectónico. Un edificio no solo debe ser estructuralmente sólido; su diseño debe ser claro, funcional y estéticamente agradable para quienes lo habitan. De la misma manera, la filosofía de Python nos anima a construir software que sea robusto, simple y claro.
 
+***
+
 ### **1.2. Características distintivas del lenguaje**
 
 Python posee un conjunto de características que lo hacen único y extremadamente versátil. Entenderlas es clave para saber cuándo y cómo aplicarlo de la forma más efectiva.
@@ -29,6 +31,8 @@ Python posee un conjunto de características que lo hacen único y extremadament
   * **Tipado Fuerte**: Python no permite operaciones ambiguas entre tipos de datos incompatibles. Esto previene errores sutiles y difíciles de detectar. Si intentas sumar un número y una cadena de texto, Python no adivinará lo que quieres hacer; te detendrá con un error claro.
   * **Tipado Dinámico**: El tipo de una variable se determina en tiempo de ejecución, no al declararla. Esto proporciona una gran agilidad en el desarrollo. Una misma variable puede contener primero un número y después una cadena de texto.
 * <mark style="background-color:$primary;">**Sintaxis limpia y legible**</mark>: Python utiliza la indentación (el espaciado al inicio de una línea) para definir bloques de código, en lugar de llaves o palabras clave. Esta no es una decisión estilística arbitraria, sino una regla de diseño que obliga al programador a escribir código visualmente ordenado. El resultado es un código más consistente y fácil de leer para cualquier desarrollador, reduciendo drásticamente los errores lógicos.
+
+***
 
 ### **1.3. El ecosistema Python: comunidad y librerías**
 
@@ -43,6 +47,8 @@ Una de las mayores fortalezas de Python no reside en el lenguaje en sí, sino en
   * **Automatización**: Selenium, Beautiful Soup, Requests.
   * **Ciberseguridad**: Scapy, Nmap-python, Cryptography.
 
+***
+
 ### **1.4. Áreas de aplicación**
 
 La versatilidad de Python y su rico ecosistema de librerías lo han convertido en una herramienta dominante en múltiples dominios de la industria:
@@ -52,6 +58,8 @@ La versatilidad de Python y su rico ecosistema de librerías lo han convertido e
 * <mark style="background-color:$primary;">**Desarrollo web**</mark>: Frameworks como [**Django**](https://www.djangoproject.com/) y [**Flask**](https://flask.palletsprojects.com/) permiten construir aplicaciones web robustas y escalables con una productividad muy alta, desde prototipos rápidos hasta sistemas complejos.
 
 Su popularidad no es solo anecdótica. Índices como [**TIOBE**](https://www.tiobe.com/tiobe-index/) lo sitúan consistentemente en el primer puesto de los lenguajes más populares, lo que refleja su enorme relevancia en la industria y una alta demanda laboral para los desarrolladores de Python.
+
+***
 
 ### Resumen del Capítulo
 

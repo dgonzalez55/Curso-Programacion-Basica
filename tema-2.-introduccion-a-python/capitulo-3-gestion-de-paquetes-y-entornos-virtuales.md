@@ -9,6 +9,8 @@ El desarrollo de software moderno rara vez se hace desde cero. Nos apoyamos en e
 * [**Python Package Index (PyPI)**](https://pypi.org/): Como vimos, es la **gran biblioteca o App Store** del mundo Python. Un repositorio centralizado que aloja más de 400,000 paquetes listos para ser usados.
 * **pip (Package Installer for Python)**: Es el **gestor de esa biblioteca.** Una herramienta de línea de comandos que se instala junto con Python y nos permite buscar, instalar, actualizar y eliminar paquetes de PyPI de manera increíblemente sencilla.
 
+***
+
 ### **3.2. Operaciones básicas con pip**
 
 Aquí tienes los comandos más comunes que usarás en tu día a día:
@@ -25,6 +27,8 @@ Aquí tienes los comandos más comunes que usarás en tu día a día:
 
 La capacidad de fijar versiones (`==`, `>=`) es crucial para la estabilidad de los proyectos, asegurando que las actualizaciones de una librería no rompan nuestro código de forma inesperada.
 
+***
+
 ### **3.3. Entornos virtuales: aislamiento y gestión de dependencias**
 
 Imagina que trabajas en dos proyectos a la vez:
@@ -34,7 +38,9 @@ Imagina que trabajas en dos proyectos a la vez:
 
 Si instalas las librerías globalmente en tu sistema, tendrás un conflicto irresoluble. Uno de los dos proyectos no funcionará. La solución a este problema son los **entornos virtuales**.
 
-<mark style="background-color:yellow;">**Analogía**</mark>: Imagina que cada proyecto es una receta de cocina diferente. Un entorno virtual es como tener una **cocina separada e impecable para cada receta**, con los ingredientes exactos (librerías y versiones) que esa receta necesita. Esto evita que los ingredientes de una receta se mezclen y arruinen otra, y garantiza que cualquiera pueda replicar tu receta exactamente.
+{% hint style="info" %}
+Imagina que cada proyecto es una receta de cocina diferente. Un entorno virtual es como tener una **cocina separada e impecable para cada receta**, con los ingredientes exactos (librerías y versiones) que esa receta necesita. Esto evita que los ingredientes de una receta se mezclen y arruinen otra, y garantiza que cualquiera pueda replicar tu receta exactamente.
+{% endhint %}
 
 #### **Ventajas de los entornos virtuales**
 
@@ -79,6 +85,8 @@ Cuando el entorno está activo, el prompt del terminal mostrará el nombre del e
 deactivate
 ```
 
+***
+
 ### **3.4. Archivos `requirements.txt`**
 
 Un entorno virtual resuelve el aislamiento, pero ¿cómo compartimos la lista de dependencias con otros? Aquí es donde entra el archivo `requirements.txt`.
@@ -109,11 +117,15 @@ pip freeze > requirements.txt
 # pip install -r requirements.txt
 ```
 
-<mark style="background-color:$success;">**Buenas Prácticas**</mark>
+{% hint style="success" %}
+**Buenas Prácticas**
 
 * **Siempre crea un entorno virtual por proyecto**. Es una regla de oro.
 * **Mantén el archivo `requirements.txt` actualizado**. Después de instalar un nuevo paquete, regenera el archivo.
 * **Considera usar un `requirements-dev.txt`** para dependencias que solo se usan en desarrollo (como `pylint` o herramientas de testing), manteniendo el `requirements.txt` principal solo con lo necesario para producción.
+{% endhint %}
+
+***
 
 ### Resumen del Capítulo
 

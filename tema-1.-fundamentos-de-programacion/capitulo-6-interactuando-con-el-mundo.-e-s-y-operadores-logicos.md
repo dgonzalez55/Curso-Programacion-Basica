@@ -4,6 +4,8 @@
 
 Un programa aislado del mundo exterior es de poca utilidad. Para ser verdaderamente funcionales, los programas necesitan comunicarse, es decir, recibir datos (Entrada) y mostrar resultados (Salida). Además, deben ser capaces de evaluar la información que reciben para tomar decisiones. Este capítulo se centra en las herramientas que permiten este diálogo y en los operadores que forman la base de la lógica de decisión.
 
+***
+
 ### 6.2. El Operador de Asignación **`=`**
 
 Ya hemos usado el operador `=` para dar valor a las variables, pero es crucial entender su funcionamiento exacto.
@@ -42,6 +44,8 @@ b = 100
 a, b = b, a # Ahora 'a' vale 100 y 'b' vale 50
 ```
 
+***
+
 ### 6.3 Operadores de Comparación y Lógicos
 
 Para que un programa pueda tomar decisiones, necesita comparar valores. Los operadores de comparación evalúan una relación entre dos valores y siempre devuelven un resultado booleano (`True` o `False`).
@@ -55,12 +59,14 @@ Para que un programa pueda tomar decisiones, necesita comparar valores. Los oper
 | `<=`     | Menor o igual que        |
 | `>=`     | Mayor o igual que        |
 
-<mark style="background-color:$warning;">**⚠️ Error Común:**</mark> `=` vs `==`
+{% hint style="danger" %}
+&#x20;**Error Común:** `=` vs `==`&#x20;
 
-Uno de los errores más frecuentes al empezar es confundir el operador de asignación `=` con el de comparación `==`. Recuerda:
+Uno de los errores más frecuentes al empezar es confundir el operador de asignación `=` con el de comparación `==`. Recuerda que:
 
 * `=`: Asigna un valor.
 * `==`: Compara si dos valores son iguales.
+{% endhint %}
 
 Python permite comparaciones encadenadas de una forma muy legible:
 
@@ -93,6 +99,8 @@ if dia_libre or estas_de_vacaciones:
     print("Tiempo para relajarse.")
 ```
 
+***
+
 ### 6.4. Entrada de Datos: La Función `input()`
 
 La función `input()` es la principal herramienta para que un programa reciba información del usuario a través del teclado. Su funcionamiento es simple pero tiene un detalle crucial:
@@ -115,9 +123,11 @@ proximo_año = edad_num + 1
 print(f"El año que viene tendrás {proximo_año} años.")
 ```
 
-<mark style="background-color:yellow;">**💡 Buenas Prácticas:**</mark> Validar la Entrada del Usuario
+{% hint style="success" %}
+**Buenas Prácticas:** Nunca confíes en que el usuario introducirá los datos correctamente. ¿Qué pasa si en el ejemplo anterior el usuario escribe "veinte" en lugar de "20"? La función `int()` fallará y el programa se detendrá con un `ValueError`. Una práctica robusta es anticipar estos errores con un bloque `try-except`.
+{% endhint %}
 
-Nunca confíes en que el usuario introducirá los datos correctamente. ¿Qué pasa si en el ejemplo anterior el usuario escribe "veinte" en lugar de "20"? La función `int()` fallará y el programa se detendrá con un `ValueError`. Una práctica robusta es anticipar estos errores con un bloque `try-except`.
+***
 
 ### 6.5. Salida de Datos: La Función `print()`
 

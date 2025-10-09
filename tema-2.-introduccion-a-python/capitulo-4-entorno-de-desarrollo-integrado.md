@@ -18,6 +18,8 @@ La instalación es sencilla:
 1. Descarga el instalador desde su página oficial: [code.visualstudio.com](https://code.visualstudio.com/).
 2. Sigue el asistente de instalación para tu sistema operativo.
 
+***
+
 ### **4.2. Extensión de Python y Pylance**
 
 La verdadera magia de VS Code para Python proviene de su extensión oficial.
@@ -35,6 +37,8 @@ Esta extensión instala automáticamente varios componentes clave:
 python -m pip install --upgrade pip
 pip install pylint
 ```
+
+***
 
 ### **4.3. Creación y ejecución del primer programa**
 
@@ -57,11 +61,15 @@ print("Hola, Mundo!")
 python hello_world.py
 ```
 
+***
+
 ### **4.4. Depuración y configuración avanzada**
 
 Escribir código es solo una parte del trabajo. Encontrar y corregir errores (bugs) es la otra, y la depuración es la habilidad esencial para ello.
 
-<mark style="background-color:yellow;">**Analogía:**</mark> Depurar es como ser un **detective que investiga el código línea por línea para encontrar al culpable (el bug)**. El depurador de VS Code es tu lupa y tu kit de análisis forense.
+{% hint style="info" %}
+Depurar es como ser un **detective que investiga el código línea por línea para encontrar al culpable (el bug)**. El depurador de VS Code es tu lupa y tu kit de análisis forense.
+{% endhint %}
 
 #### **Controles de depuración**
 
@@ -100,6 +108,8 @@ La primera vez que depuras, VS Code creará una carpeta `.vscode` con un archivo
 * **"pylint is not installed"**: Asegúrate de haber instalado `pylint` en tu entorno virtual activo (`pip install pylint`).
 * **No puedo depurar**: La depuración requiere que hayas abierto una carpeta de proyecto, no solo un archivo. Si solo abres un fichero `.py`, las funciones de depuración estarán limitadas.
 * **El intérprete de Python es incorrecto**: Usa `Ctrl+Shift+P` para abrir la paleta de comandos, escribe "Python: Select Interpreter" y asegúrate de que estás usando el intérprete de tu entorno virtual (`venv`).
+
+***
 
 ### Resumen del Capítulo
 

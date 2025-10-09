@@ -51,6 +51,8 @@ def validar_email(email):
     return "@" in email and "." in email
 ```
 
+***
+
 ### 2.2. Tipado fuerte y dinámico en Python
 
 El sistema de tipos de Python se define por dos conceptos clave: es de **tipado dinámico y fuerte.**
@@ -128,6 +130,8 @@ def procesar_dato(dato):
     else:
         return None
 ```
+
+***
 
 ### 2.3. Tipos de datos básicos y colecciones
 
@@ -369,6 +373,8 @@ print(conjunto_a - conjunto_b)  # {1, 2} - diferencia
 print(conjunto_a ^ conjunto_b)  # {1, 2, 5, 6} - diferencia simétrica
 ```
 
+***
+
 ### 2.4. Constantes y su uso en Python
 
 Como se mencionó anteriormente, **Python no tiene un mecanismo para crear constantes verdaderas**. La convención establecida por PEP 8 es utilizar nombres de variables completamente en mayúsculas (`UPPER_CASE`) para indicar que un valor no debe ser modificado.
@@ -429,6 +435,8 @@ def incrementar_contador():
 incrementar_contador()
 print(contador_global) # 1
 ```
+
+***
 
 ### Resumen del Capítulo
 

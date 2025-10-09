@@ -8,7 +8,9 @@ El desarrollo de software es una disciplina inherentemente colaborativa. Es un h
 
 Los [**Python Enhancement Proposals (PEP)**](https://peps.python.org/) son los documentos de diseño que guían la evolución del lenguaje Python.
 
-<mark style="background-color:yellow;">**Analogía**</mark>: Piensa en los PEPs como las "**propuestas de ley**" de la comunidad Python. Cualquier cambio significativo, desde una nueva característica de sintaxis hasta una guía de estilo, se propone, discute y documenta en un PEP, asegurando que el lenguaje evolucione de una manera ordenada, transparente y consensuada.
+{% hint style="info" %}
+Piensa en los PEPs como las "**propuestas de ley**" de la comunidad Python. Cualquier cambio significativo, desde una nueva característica de sintaxis hasta una guía de estilo, se propone, discute y documenta en un PEP, asegurando que el lenguaje evolucione de una manera ordenada, transparente y consensuada.
+{% endhint %}
 
 Existen varios tipos de PEP:
 
@@ -22,6 +24,8 @@ Algunos de los PEPs más importantes son:
 * [**PEP 8**](https://peps.python.org/pep-0008/): La guía de estilo oficial para el código Python.
 * [**PEP 20**](https://peps.python.org/pep-0020/): El Zen de Python, la filosofía del lenguaje.
 * [**PEP 484**](https://peps.python.org/pep-0484/): Introduce las anotaciones de tipo (Type Hints).
+
+***
 
 ### **5.2. PEP 8: guía de estilo oficial**
 
@@ -58,6 +62,8 @@ Aquí están algunas de las reglas más importantes:
     * Deben ser oraciones completas y mantenerse actualizados.
     * Empiezan con `#` seguido de un espacio.
     * Evita comentarios obvios que no aportan valor.
+
+***
 
 ### **5.3. Recursos de documentación y comunidad**
 
@@ -101,6 +107,8 @@ def calcular_area(base, altura):
 * [**Real Python**](https://realpython.com/): Ofrece tutoriales y artículos de alta calidad, desde nivel principiante hasta avanzado.
 * [**GitHub**](https://github.com/topics/python): Permite explorar el código fuente de miles de proyectos Python, una excelente forma de aprender de ejemplos reales.
 * [**Python.org**](https://www.python.org/)**:** El sitio oficial de la comunidad, con noticias, eventos y recursos educativos.
+
+***
 
 ### Resumen del Capítulo
 

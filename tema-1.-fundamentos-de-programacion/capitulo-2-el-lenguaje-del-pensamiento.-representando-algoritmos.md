@@ -4,6 +4,8 @@
 
 Antes de traducir un algoritmo a un lenguaje de programación, es fundamental tener una forma clara de representarlo y comunicarlo. Escribir la lógica en un formato intermedio nos ayuda a pensar, a detectar errores y a colaborar con otros. Las dos herramientas más extendidas para esta tarea son los diagramas de flujo y el pseudocódigo. Cada uno ofrece una perspectiva diferente: el primero es eminentemente gráfico y visual, mientras que el segundo se acerca más a la estructura del código real. Dominar ambos te dará una gran flexibilidad para diseñar soluciones.
 
+***
+
 ### 2.2. Diagramas de Flujo: Una Visión Gráfica
 
 Un diagrama de flujo es una representación gráfica de un algoritmo. Utiliza una serie de símbolos estandarizados conectados por flechas para mostrar la secuencia de operaciones y el flujo de control del programa. Es una herramienta excelente para visualizar la lógica general de un vistazo.
@@ -35,6 +37,8 @@ La simbología estándar incluye:
 
 Aunque son muy útiles para visualizar algoritmos sencillos, su rigidez y dificultad de modificación para problemas complejos nos llevan a buscar una alternativa más flexible: el pseudocódigo.
 
+***
+
 ### 2.3. Pseudocódigo: Lógica en Lenguaje Humano
 
 El pseudocódigo es un puente entre el lenguaje natural humano y el lenguaje de programación. Es una forma de describir un algoritmo utilizando una mezcla de palabras comunes (como "Si", "Mientras", "Leer") y una estructura similar a la del código, pero sin ceñirse a la sintaxis estricta de ningún lenguaje en particular.
@@ -47,7 +51,9 @@ Características Principales:
 
 #### **Sintaxis de Referencia para Pseudocódigo**
 
-<mark style="background-color:yellow;">💡</mark> <mark style="background-color:yellow;"></mark><mark style="background-color:yellow;">**Nota**</mark><mark style="background-color:yellow;">: No existe un estándar universal para el pseudocódigo. Lo importante no es seguir una sintaxis al pie de la letra, sino ser claro y consistente en la forma de expresar la lógica. A continuación, se muestra una posible sintaxis como referencia.</mark>
+{% hint style="info" %}
+**Nota**: No existe un estándar universal para el pseudocódigo. Lo importante no es seguir una sintaxis al pie de la letra, sino ser claro y consistente en la forma de expresar la lógica. A continuación, se muestra una posible sintaxis como referencia.
+{% endhint %}
 
 **Palabras Clave:**
 

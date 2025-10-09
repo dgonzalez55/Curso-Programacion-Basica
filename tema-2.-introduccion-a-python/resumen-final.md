@@ -58,3 +58,5 @@ Desarrolla un script Python que sirva como una pequeña aplicación de consola. 
 Con estos fundamentos sólidos, ya no eres solo alguien que sabe de programación, sino alguien que sabe cómo trabajar profesionalmente con Python. Has configurado tu taller, conoces tus herramientas y entiendes las reglas. Ahora estás preparado para adentrarte en la programación estructurada, el siguiente paso emocionante de tu aventura, donde comenzarás a dar vida a tus ideas y a construir programas más complejos y útiles.&#x20;
 
 ¡El verdadero viaje de creación de código te espera!
+
+***

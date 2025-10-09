@@ -13,6 +13,8 @@ Un programa Python exitoso comienza con una estructura bien definida. La organiz
 
 Esta filosofía está en el corazón de Python, cuyo lema "_la legibilidad cuenta_" (_readability counts_) subraya que <mark style="background-color:$primary;">**el código se escribe una vez, pero se lee muchas veces**</mark>.
 
+***
+
 ### 1.2. Estructura típica de un script Python
 
 Un script de Python profesional sigue una secuencia lógica y ordenada para sus componentes. Esta organización no es arbitraria; mejora la claridad y previsibilidad del código.
@@ -57,6 +59,8 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+***
 
 ### 1.3. Indentación: El corazón de la sintaxis Python
 
@@ -140,6 +144,8 @@ Además, es posible omitir la indentación eliminando el salto de línea cuando 
 if mostrar: print("¡Hola mundo!")
 ```
 
+***
+
 ### 1.4. Comentarios y legibilidad
 
 Los comentarios son fragmentos de texto dentro del código que el intérprete de Python ignora. Su propósito es documentar el código, explicar la lógica compleja y facilitar el trabajo en equipo y el mantenimiento futuro.
@@ -212,6 +218,8 @@ precio_final = precio_base * 0.9
 precio_final = precio_base * 0.9
 ```
 
+***
+
 ### 1.5. El modelo IPO (Input-Process-Output)
 
 El **modelo IPO** (Entrada-Proceso-Salida) es un patrón fundamental para estructurar la lógica de un programa o de una función. Propone dividir el código en tres fases claras y distintas, similar a una receta de cocina: los ingredientes son la _entrada_, el acto de cocinar es el _proceso_, y el plato final es la _salida_.
@@ -263,6 +271,8 @@ Adoptar el modelo IPO ofrece varias ventajas:
 * **Reutilización**: La lógica del proceso puede ser empaquetada en funciones y reutilizada.
 * **Mantenibilidad**: Los cambios en la entrada o la salida no afectan necesariamente al proceso.
 
+***
+
 ### 1.6. El _shebang_ y ejecución de scripts
 
 En sistemas operativos tipo Unix (como Linux o macOS), la línea _<mark style="background-color:$primary;">**shebang**</mark>_ es la primera línea de un script e indica al sistema qué intérprete debe usar para ejecutarlo. Para Python 3, se suele usar:
@@ -290,6 +300,8 @@ chmod +x mi_script.py
 # Ejecutar el script
 ./mi_script.py
 ```
+
+***
 
 ### Resumen del Capítulo
 

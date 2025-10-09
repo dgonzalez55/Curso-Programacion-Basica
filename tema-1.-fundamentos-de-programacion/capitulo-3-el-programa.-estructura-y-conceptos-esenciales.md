@@ -4,6 +4,8 @@
 
 Una vez que hemos diseñado y representado nuestro algoritmo, es hora de darle vida como un programa. Aunque cada lenguaje de programación tiene su propia sintaxis, todos los programas bien escritos comparten una anatomía fundamental y un modelo de funcionamiento común. Entender esta estructura universal te permitirá leer, comprender y escribir código de manera más efectiva, sin importar el lenguaje que utilices.
 
+***
+
 ### 3.2. El Modelo Universal: Entrada-Proceso-Salida (IPO)
 
 En su nivel más fundamental, casi cualquier programa informático puede ser descrito por el modelo de Entrada-Proceso-Salida (Input-Process-Output o IPO). Este esquema es la piedra angular para entender cómo funciona el software.
@@ -50,6 +52,8 @@ perimetro = 2 * PI * radio
 print(f"El perímetro del círculo es {perimetro:.2f} unidades")
 ```
 
+***
+
 ### 3.3. Estructura y Legibilidad del Código
 
 Un programa no es solo una secuencia de instrucciones para la máquina; también es un documento que otros programadores (¡o tú mismo en el futuro!) necesitarán leer y entender. Por ello, una estructura clara y legible es crucial. Un programa bien estructurado generalmente se divide en las siguientes partes:
@@ -88,12 +92,16 @@ print(f"El perímetro de un círculo con radio {radio_usuario} es: {perimetro_ca
 
 ```
 
-<mark style="background-color:yellow;">**💡 Buenas Prácticas:**</mark> <mark style="background-color:yellow;"></mark><mark style="background-color:yellow;">Código Autodescriptivo</mark>
+{% hint style="success" %}
+**Buenas Prácticas:** Código Autodescriptivo
 
 * **Nombres de Variables Descriptivos**: Usa nombres que expliquen el propósito de la variable. `radio_usuario` es infinitamente mejor que `r` o `x`. Esto reduce la necesidad de comentarios obvios.
-* **Comentarios Útiles**: Un buen comentario explica el _porqué_ de una decisión de código compleja, no el _qué_ hace una línea obvia.
+* **Comentarios Útiles**: Un buen comentario explica el _porqué_ de una decisión de código compleja, no el _qué_ hace una línea obvia.&#x20;
   * Mal comentario: `# Multiplica radio por 2 y PI` (es obvio).
   * Buen comentario: `# Usamos la librería 'decimal' para evitar errores de precisión en cálculos financieros`.
+{% endhint %}
+
+***
 
 ### 3.4. Errores: El Enemigo a Vencer
 
