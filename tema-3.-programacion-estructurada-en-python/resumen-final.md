@@ -2,27 +2,27 @@
 
 ¡Enhorabuena! Has completado el estudio de la **programación estructurada en Python**, una etapa fundamental para construir programas claros, eficientes y bien organizados. En este tema has adquirido las herramientas esenciales para controlar el flujo de ejecución, manipular datos de distintos tipos, gestionar entradas y salidas, y escribir código robusto y legible.
 
-### **Logros alcanzados**:
+### **✅ Logros alcanzados**
 
-* ✅ Dominio de la estructura básica de un programa Python
-* ✅ Uso correcto de variables, tipos de datos y operadores
-* ✅ Control del flujo con condicionales (`if`, `elif`, `else`, `match-case`)
-* ✅ Implementación de bucles (`while`, `for`) con manejo avanzado (`break`, `continue`, `else`, `pass`)
-* ✅ Comprensión de la mutabilidad e inmutabilidad de los tipos de datos
-* ✅ Manejo de colecciones: listas, tuplas, rangos, diccionarios y conjuntos
-* ✅ Aplicación de técnicas de formateo de cadenas y comprensión de listas
-* ✅ Gestión de errores mediante bloques `try-except-else-finally`
-* ✅ Escritura de código limpio y profesional siguiendo PEP 8
+* Dominio de la estructura básica de un programa Python
+* Uso correcto de variables, tipos de datos y operadores
+* Control del flujo con condicionales (`if`, `elif`, `else`, `match-case`)
+* Implementación de bucles (`while`, `for`) con manejo avanzado (`break`, `continue`, `else`, `pass`)
+* Comprensión de la mutabilidad e inmutabilidad de los tipos de datos
+* Manejo de colecciones: listas, tuplas, rangos, diccionarios y conjuntos
+* Aplicación de técnicas de formateo de cadenas y comprensión de listas
+* Gestión de errores mediante bloques `try-except-else-finally`
+* Escritura de código limpio y profesional siguiendo PEP 8
 
-### **Herramientas y conceptos clave dominados**:
+### **🛠️ Herramientas y conceptos clave dominados**:
 
-* ✅ Estructura `if __name__ == "__main__":` como punto de entrada
-* ✅ Indentación con 4 espacios como estándar obligatorio
-* ✅ Uso de `input()` y `print()` con formateo avanzado (f-strings)
-* ✅ Iteradores y generadores para un uso eficiente de la memoria
-* ✅ Built-in functions para matemáticas, conversión de tipos y manejo de secuencias
-* ✅ Métodos integrados para cadenas, listas, diccionarios y conjuntos
-* ✅ Control de excepciones para mejorar la robustez del programa
+* Estructura `if __name__ == "__main__":` como punto de entrada
+* Indentación con 4 espacios como estándar obligatorio
+* Uso de `input()` y `print()` con formateo avanzado (f-strings)
+* Iteradores y generadores para un uso eficiente de la memoria
+* Built-in functions para matemáticas, conversión de tipos y manejo de secuencias
+* Métodos integrados para cadenas, listas, diccionarios y conjuntos
+* Control de excepciones para mejorar la robustez del programa
 
 ### Preguntas de Autoevaluación Final
 
@@ -49,6 +49,8 @@ else:print("Eres menor")
 * Guardar y cargar las tareas desde un archivo de texto
 * Usar manejo de excepciones para errores de archivo o entrada
 * Seguir PEP 8 y usar comentarios/docstrings donde sea necesario
+
+### Conclusión y Siguiente Paso
 
 Con estos conocimientos, estás perfectamente preparado para el siguiente paso: la **programación modular**. Allí aprenderás a organizar tu código en funciones y módulos reutilizables, lo que te permitirá crear programas más grandes, mantenibles y profesionales.
 

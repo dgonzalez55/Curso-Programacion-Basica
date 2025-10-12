@@ -93,10 +93,5 @@
 
 * 10.1. ¿Por qué es importante el estilo de código?
 * 10.2. Introducción a PEP 8
-* 10.3. Reglas fundamentales de indentación
-* 10.4. Convenciones de nomenclatura
-* 10.5. Espacios en blanco y operadores
-* 10.6. Comentarios y docstrings
-* 10.7. Imports y organización de módulos
-* 10.8. Herramientas para mantener el estilo
-* 10.9. Casos prácticos: Refactoring de código
+* 10.3. Reglas clave de PEP 8
+* 10.4. Herramientas para mantener el estilo
