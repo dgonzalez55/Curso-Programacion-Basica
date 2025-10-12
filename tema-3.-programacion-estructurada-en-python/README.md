@@ -63,13 +63,10 @@
 
 * 7.1. ¿Qué son las funciones integradas?
 * 7.2. Funciones matemáticas
-* 7.3. Funciones de codificación y representación
-* 7.4. Funciones para iterables (I)
-* 7.5. Funciones para iterables (II)
-* 7.6. Funciones de conversión de tipos
-* 7.7. Iteradores personalizados
-* 7.8. Generadores: Iteradores simplificados
-* 7.9. Casos prácticos avanzados
+* 7.3. Funciones para codificación y representación
+* 7.4. Funciones para iterables
+* 7.5. Funciones de conversión de tipos
+* 7.6. Generadores: Iteradores simplificados
 
 #### ⚠️ [Capítulo 8: Manejo de excepciones](capitulo-8-manejo-de-excepciones.md)
 
