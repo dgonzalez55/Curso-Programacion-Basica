@@ -68,26 +68,35 @@
 * 7.5. Funciones de conversión de tipos
 * 7.6. Generadores: Iteradores simplificados
 
-#### ⚠️ [Capítulo 8: Manejo de excepciones](capitulo-8-manejo-de-excepciones.md)
+#### 🪄 [Capítulo 8: Métodos para Cadenas, Listas, Diccionarios y Conjuntos](capitulo-8-metodos-para-cadenas-listas-diccionarios-y-conjuntos.md)
 
-* 8.1. ¿Qué son las excepciones?
-* 8.2. Estructura básica: try-except
-* 8.3. Excepciones múltiples y jerarquía
-* 8.4. Captura genérica con Exception
-* 8.5. Cláusulas else y finally
-* 8.6. Excepciones comunes en Python
-* 8.7. Lanzar excepciones personalizadas
-* 8.8. Casos prácticos avanzados
-* 8.9. Mejores prácticas para el manejo de excepciones
+* 8.1. Introducción: La potencia de los métodos integrados
+* 8.2. Métodos de cadenas (`str`)
+* 8.3. Métodos de listas (`list`)
+* 8.4. Métodos de diccionarios (`dict`)
+* 8.5. Métodos de conjuntos (`set`)
+* 8.6. Técnicas avanzadas y mejores prácticas
 
-#### 📝 [Capítulo 9: Estilo de código y PEP 8](capitulo-9-estilo-de-codigo-y-pep-8.md)
+#### ⚠️ [Capítulo 9: Manejo de excepciones](capitulo-9-manejo-de-excepciones.md)
 
-* 9.1. ¿Por qué es importante el estilo de código?
-* 9.2. Introducción a PEP 8
-* 9.3. Reglas fundamentales de indentación
-* 9.4. Convenciones de nomenclatura
-* 9.5. Espacios en blanco y operadores
-* 9.6. Comentarios y docstrings
-* 9.7. Imports y organización de módulos
-* 9.8. Herramientas para mantener el estilo
-* 9.9. Casos prácticos: Refactoring de código
+* 9.1. ¿Qué son las excepciones?
+* 9.2. Estructura básica: try-except
+* 9.3. Excepciones múltiples y jerarquía
+* 9.4. Captura genérica con Exception
+* 9.5. Cláusulas else y finally
+* 9.6. Excepciones comunes en Python
+* 9.7. Lanzar excepciones personalizadas
+* 9.8. Casos prácticos avanzados
+* 9.9. Mejores prácticas para el manejo de excepciones
+
+#### 📝 [Capítulo 10: Estilo de código y PEP 8](capitulo-10-estilo-de-codigo-y-pep-8.md)
+
+* 10.1. ¿Por qué es importante el estilo de código?
+* 10.2. Introducción a PEP 8
+* 10.3. Reglas fundamentales de indentación
+* 10.4. Convenciones de nomenclatura
+* 10.5. Espacios en blanco y operadores
+* 10.6. Comentarios y docstrings
+* 10.7. Imports y organización de módulos
+* 10.8. Herramientas para mantener el estilo
+* 10.9. Casos prácticos: Refactoring de código

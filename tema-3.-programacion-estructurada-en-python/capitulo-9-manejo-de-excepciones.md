@@ -1,10 +1,10 @@
-# Capítulo 8: Manejo de excepciones
+# Capítulo 9: Manejo de excepciones
 
 Una **excepción** es un error que ocurre durante la ejecución de un programa, pero que no necesariamente está vinculado a la sintaxis del código. El **manejo de excepciones** nos permite controlar estos errores de manera elegante, evitando que nuestros programas se detengan abruptamente y proporcionando una mejor experiencia al usuario.
 
 En Python, el manejo de excepciones se realiza mediante las estructuras `try`, `except`, `else` y `finally`, que nos permiten capturar errores específicos, manejarlos apropiadamente y ejecutar código de limpieza cuando sea necesario.
 
-### 8.1. ¿Qué son las excepciones?
+### 9.1. ¿Qué son las excepciones?
 
 Las excepciones son eventos que interrumpen el flujo normal de ejecución de un programa. Aunque el código sea sintácticamente correcto, pueden ocurrir errores durante la ejecución por diversos motivos:
 
@@ -34,7 +34,7 @@ except ZeroDivisionError:
 print("Esta línea sí se ejecutará")
 ```
 
-### 8.2. Estructura básica: try-except
+### 9.2. Estructura básica: try-except
 
 La estructura `try-except` es la forma fundamental de manejar excepciones en Python.
 
@@ -93,7 +93,7 @@ print(convertir_a_numero("abc"))     # Error: 'abc' no es un número válido
 print(convertir_a_numero(None))      # Error: El tipo de dato...
 ```
 
-### 8.3. Excepciones múltiples y jerarquía
+### 9.3. Excepciones múltiples y jerarquía
 
 #### Capturar múltiples excepciones con una sola cláusula
 
@@ -150,7 +150,7 @@ def procesar_archivo(nombre_archivo):
 # procesar_archivo('inexistente.txt')   # El archivo no existe
 ```
 
-### 8.4. Captura genérica con Exception
+### 9.4. Captura genérica con Exception
 
 #### Capturar cualquier excepción
 
@@ -216,7 +216,7 @@ def funcion_con_error_detallado():
 # funcion_con_error_detallado()  # Descomenta para probar
 ```
 
-### 8.5. Cláusulas else y finally
+### 9.5. Cláusulas else y finally
 
 #### else: Cuando NO ocurre ninguna excepción
 
@@ -325,7 +325,7 @@ def procesar_archivo_completo(nombre_archivo):
 # procesar_archivo_completo('numeros.txt')
 ```
 
-### 8.6. Excepciones comunes en Python
+### 9.6. Excepciones comunes en Python
 
 #### ValueError: Valor incorrecto
 
@@ -407,7 +407,7 @@ print(acceder_datos_seguros(diccionario, "b"))  # 2
 print(acceder_datos_seguros(diccionario, "z"))  # Error: Clave no existe
 ```
 
-### 8.7. Lanzar excepciones personalizadas
+### 9.7. Lanzar excepciones personalizadas
 
 #### raise: Lanzar excepciones manualmente
 
@@ -513,7 +513,7 @@ registrar_usuario("email_sin_arroba", "MiPassword123")     # ❌ Error en email
 registrar_usuario("usuario@ejemplo.com", "corta")         # ❌ Error en contraseña
 ```
 
-### 8.8. Casos prácticos avanzados
+### 9.8. Casos prácticos avanzados
 
 #### Sistema de login con reintentos
 
@@ -688,7 +688,7 @@ csv_contenido = """2024-01-15, Laptop, 2, 899.99
 # ventas, errores = procesar_csv_ventas('ventas.csv')
 ```
 
-### 8.9. Mejores prácticas para el manejo de excepciones
+### 9.9. Mejores prácticas para el manejo de excepciones
 
 #### ✅ Buenas prácticas
 

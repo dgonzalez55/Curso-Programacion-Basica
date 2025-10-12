@@ -1,10 +1,10 @@
-# Capítulo 9: Estilo de código y PEP 8
+# Capítulo 10: Estilo de código y PEP 8
 
 El **estilo de código** es mucho más que una cuestión estética; es una práctica fundamental que mejora la legibilidad, mantenibilidad y colaboración en proyectos de software. **PEP 8** (Python Enhancement Proposal 8) es la guía de estilo oficial para el código Python, establecida por la comunidad de desarrolladores y respaldada por el creador del lenguaje, Guido van Rossum.
 
 En este capítulo exploraremos los principios fundamentales del código limpio en Python, las reglas específicas de PEP 8, técnicas de documentación profesional, y herramientas para mantener consistencia en el estilo de código.
 
-### 9.1. ¿Por qué es importante el estilo de código?
+### 10.1. ¿Por qué es importante el estilo de código?
 
 #### El código se lee más de lo que se escribe
 
@@ -80,7 +80,7 @@ numeros_primos = filtrar_lista(numeros_candidatos, es_numero_primo)
 print(f"Números primos encontrados: {numeros_primos}")
 ```
 
-### 9.2. Introducción a PEP 8
+### 10.2. Introducción a PEP 8
 
 #### ¿Qué es PEP 8?
 
@@ -110,7 +110,7 @@ PEP 8 incluye una importante advertencia: **"Una tonta consistencia es el duende
 * En APIs que deben mantener consistencia con librerías externas
 * Cuando el equipo tiene convenciones específicas bien documentadas
 
-### 9.3. Reglas fundamentales de indentación
+### 10.3. Reglas fundamentales de indentación
 
 #### Espacios, no tabuladores
 
@@ -229,7 +229,7 @@ if __name__ == "__main__":
     main()
 ```
 
-### 9.4. Convenciones de nomenclatura
+### 10.4. Convenciones de nomenclatura
 
 #### Nombres de variables y funciones
 
@@ -352,7 +352,7 @@ class Ejemplo:
         return "Muy difícil de acceder desde fuera"
 ```
 
-### 9.5. Espacios en blanco y operadores
+### 10.5. Espacios en blanco y operadores
 
 #### Operadores binarios
 
@@ -420,7 +420,7 @@ if x == 4 :
 dct ['key'] = lst [index]
 ```
 
-### 9.6. Comentarios y docstrings
+### 10.6. Comentarios y docstrings
 
 #### Comentarios inline
 
@@ -567,7 +567,7 @@ class GestorInventario:
         pass
 ```
 
-### 9.7. Imports y organización de módulos
+### 10.7. Imports y organización de módulos
 
 #### Orden de imports
 
@@ -622,7 +622,7 @@ from ...configuracion import CONFIGURACION_BASE
 from mi_modulo import *  # No es claro qué se importa
 ```
 
-### 9.8. Herramientas para mantener el estilo
+### 10.8. Herramientas para mantener el estilo
 
 #### Linters y formateadores
 
@@ -722,7 +722,7 @@ repos:
       - id: isort
 ```
 
-### 9.9. Casos prácticos: Refactoring de código
+### 10.9. Casos prácticos: Refactoring de código
 
 #### Ejemplo 1: Mejorando legibilidad
 
@@ -868,7 +868,7 @@ class Usuario:
             raise ValueError("La contraseña debe tener al menos una mayúscula")
 ```
 
-### 9.10. Proyecto final: Aplicación bien estructurada
+### 10.10. Proyecto final: Aplicación bien estructurada
 
 #### Estructura de proyecto completa
 

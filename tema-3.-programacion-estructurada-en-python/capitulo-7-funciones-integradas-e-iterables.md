@@ -14,6 +14,8 @@ print(dir(__builtins__))
 
 Todas estas funciones están perfectamente documentadas en: [docs.python.org/3/library/functions.html](https://docs.python.org/3/library/functions.html)
 
+***
+
 ### 7.2. Funciones matemáticas
 
 A continuación se resumen algunas de las funciones más comunes para cálculos matemáticos.
@@ -52,6 +54,8 @@ print(f"Pi con 3 decimales: {round(math.pi, 3)}")     # 3.142
 print(f"Suma: {sum(numeros)}")                         # 15
 ```
 
+***
+
 ### 7.3. Funciones para codificación y representación
 
 A continuación se resumen algunas de las funciones más comunes para la codificación y representación de datos y valores numéricos.
@@ -77,6 +81,8 @@ print(f"Hexadecimal: {hex(valor_numerico)}")    # Hexadecimal: 0x29a
 print(f"Octal: {oct(valor_numerico)}")          # Octal: 0o1232
 print(f"Código Unicode: {ord('A')}")            # Código Unicode: 65
 ```
+
+***
 
 ### 7.4. Funciones para iterables
 
@@ -208,6 +214,8 @@ for numero in reversed(numeros):
 print()
 ```
 
+***
+
 ### 7.5. Funciones de conversión de tipos
 
 Estas funciones permiten transformar datos de un tipo a otro, una tarea fundamental en programación.
@@ -246,6 +254,8 @@ valores = [1, 2, 3]
 diccionario = dict(zip(claves, valores))
 print(f"dict(zip(...)): {diccionario}")  # {'a': 1, 'b': 2, 'c': 3}
 ```
+
+***
 
 ### 7.6. Generadores: Iteradores simplificados
 
@@ -289,6 +299,8 @@ print(f"Tamaño del generador en memoria: {sys.getsizeof(gen_cuadrados)} bytes")
 
 El resultado muestra una diferencia drástica en el uso de memoria, demostrando el poder de los generadores.
 
+***
+
 ### Resumen del Capítulo
 
 Las funciones integradas de Python y los conceptos de iteradores/generadores forman parte del arsenal fundamental de todo programador Python. Estas herramientas no solo simplifican el código, sino que también optimizan el rendimiento y el uso de memoria, especialmente cuando se trabaja con grandes volúmenes de datos.
@@ -315,4 +327,6 @@ Crea un programa que:
 2. Use `map`, `filter` y `zip` para transformar y combinar datos
 3. Compare rendimiento entre listas y generadores con datos grandes
 
-Si bien estas herramientas integradas son potentes, los programas del mundo real deben estar preparados para imprevistos y fallos. El siguiente capítulo aborda cómo manejar errores de forma controlada para construir aplicaciones robustas.
+Si bien estas herramientas integradas son potentes, nos falta aún por conocer cuáles son los métodos nativos que nos ofrecen las estructuras básicas de datos: **cadenas, listas, diccionarios y conjuntos**. En el siguiente capítulo se aborda cómo estos recursos permiten transformar, ordenar, buscar, filtrar y organizar la información de manera robusta, adaptable y "pythónica".
+
+***
