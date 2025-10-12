@@ -80,14 +80,14 @@
 #### ⚠️ [Capítulo 9: Manejo de excepciones](capitulo-9-manejo-de-excepciones.md)
 
 * 9.1. ¿Qué son las excepciones?
-* 9.2. Estructura básica: try-except
+* 9.2. Estructura básica: `try-except`
 * 9.3. Excepciones múltiples y jerarquía
-* 9.4. Captura genérica con Exception
-* 9.5. Cláusulas else y finally
+* 9.4. Captura genérica con `Exception`
+* 9.5. Las cláusulas `else` y `finally`
 * 9.6. Excepciones comunes en Python
-* 9.7. Lanzar excepciones personalizadas
-* 9.8. Casos prácticos avanzados
-* 9.9. Mejores prácticas para el manejo de excepciones
+* 9.7. Lanzar excepciones con `raise`
+* 9.8. Caso práctico: Sistema de login
+* 9.9. Mejores prácticas
 
 #### 📝 [Capítulo 10: Estilo de código y PEP 8](capitulo-10-estilo-de-codigo-y-pep-8.md)
 
