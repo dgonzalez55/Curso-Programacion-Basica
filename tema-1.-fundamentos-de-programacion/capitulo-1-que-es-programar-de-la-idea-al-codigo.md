@@ -116,4 +116,10 @@ En este capítulo, hemos establecido que la programación es una disciplina que 
 2. ¿Qué consecuencias prácticas puede tener saltarse la fase de diseño del algoritmo y empezar a codificar directamente?
 3. Piensa en una tarea cotidiana que realices (como prepararte el desayuno) y trata de describirla como un algoritmo, asegurándote de que cumple las tres características esenciales.
 
+#### 🎬 **Vídeo de Resumen**:
+
+{% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fsb5vrPpQymPMAZSrPOCN%2Fuploads%2FUWDOGAU7UvzEjXU3NTVg%2F%C2%BFQu%C3%A9_es_Programar_.mp4?alt=media&token=d880e915-2e56-4970-bfe5-646048ff1b9d" %}
+T01 - Capítulo 1: ¿Qué es Programar?
+{% endembed %}
+
 ***
