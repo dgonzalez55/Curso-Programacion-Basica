@@ -14,6 +14,7 @@
 * 2.1. Elección de la versión de Python
 * 2.2. Instalación en diferentes sistemas operativos
 * 2.3. Configuración del PATH y verificación
+* 2.4. Instalación manual de PIP
 
 #### 📦 [Capítulo 3: Gestión de paquetes y entornos virtuales](capitulo-3-gestion-de-paquetes-y-entornos-virtuales.md)
 

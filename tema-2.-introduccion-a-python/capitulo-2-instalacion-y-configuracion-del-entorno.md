@@ -123,11 +123,11 @@ Esto abre el intérprete interactivo donde puedes ejecutar código Python línea
 
 ### **2.4. Instalación manual de PIP**
 
-Existe la posibilidad de que el gestor de paquetes **pip** no se incluya en la versión actual del instalador de Python, siendo no obstante posible su instalación manual mediante cualquiera de los métodos que a continuación de recogen.
+Existe la posibilidad de que el gestor de paquetes **pip** no se incluya en la versión actual del instalador de Python, siendo no obstante posible su instalación manual mediante cualquiera de los métodos que a continuación se recogen.
 
 #### **Método `ensurepip`**
 
-Python incluye el módulo **`ensurepip`**, el cual permite la instalación de **pip** mediante la ejecución del siguiente comando a través de la terminal del sistema
+Python incluye de serie el módulo **`ensurepip`**, el cual permite la instalación de **pip** mediante la ejecución del siguiente comando a través de la terminal del sistema
 
 ```bash
 # Windows
@@ -151,6 +151,8 @@ C:> py get-pip.py
 # Linux / MacOS
 $ python get-pip.py
 ```
+
+3. Lee atentamente el resultado de la instalación en la terminal, pues puede requerir la configuración adicional de las variables de entorno.
 
 _Para más información sobre el script get-pip.py:_ [_https://github.com/pypa/get-pip_](https://github.com/pypa/get-pip)
 
