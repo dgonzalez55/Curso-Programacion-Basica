@@ -239,4 +239,8 @@ En este capítulo, hemos explorado las dos herramientas principales para represe
 2. ¿Por qué el proceso de escribir pseudocódigo puede ayudar a un equipo de programadores a trabajar de forma más coordinada?
 3. Toma el algoritmo de tu desayuno del capítulo anterior y represéntalo primero con un diagrama de flujo y luego con pseudocódigo.
 
+#### 🎬 **Vídeo de Resumen**:
+
+{% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fsb5vrPpQymPMAZSrPOCN%2Fuploads%2FvObmGDXVWuNRI62OGRQT%2FEl_Lenguaje_del_Pensamiento.mp4?alt=media&token=a2d41d9e-4c05-4fb7-9151-6814b2b732db" %}
+
 ***

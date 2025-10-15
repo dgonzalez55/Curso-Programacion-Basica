@@ -152,7 +152,7 @@ C:> py get-pip.py
 $ python get-pip.py
 ```
 
-3. Lee atentamente el resultado de la instalación en la terminal, pues puede requerir la configuración adicional de las variables de entorno.
+3. Lee atentamente el resultado de la instalación en la terminal, pues puede requerirse la configuración adicional de las variables de entorno (cómo en el caso del propio Python).
 
 _Para más información sobre el script get-pip.py:_ [_https://github.com/pypa/get-pip_](https://github.com/pypa/get-pip)
 
