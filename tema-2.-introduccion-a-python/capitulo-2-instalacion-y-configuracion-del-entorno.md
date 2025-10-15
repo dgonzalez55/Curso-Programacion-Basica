@@ -121,6 +121,45 @@ Esto abre el intérprete interactivo donde puedes ejecutar código Python línea
 
 ***
 
+### **2.4. Instalación manual de PIP**
+
+Existe la posibilidad de que el gestor de paquetes **pip** no se incluya en la versión actual del instalador de Python, siendo no obstante posible su instalación manual mediante cualquiera de los métodos que a continuación de recogen.
+
+#### **Método `ensurepip`**
+
+Python incluye el módulo **`ensurepip`**, el cual permite la instalación de **pip** mediante la ejecución del siguiente comando a través de la terminal del sistema
+
+```bash
+# Windows
+C:> py -m ensurepip --upgrade
+# Linux / MacOS
+$ python -m ensurepip --upgrade
+```
+
+_Para más información sobre el funcionamiento del módulo ensurepip:_ [_https://docs.python.org/3/library/ensurepip.html#module-ensurepip_](https://docs.python.org/3/library/ensurepip.html#module-ensurepip)
+
+#### **Método `get-pip.py`**
+
+Este método requiere la descarga y ejecución del script **`get-pip.py`** que contiene toda la lógica necesaria para la instalación de **pip** dentro del entorno utilizado.
+
+1. Descarga el script del enlace oficial: [https://bootstrap.pypa.io/get-pip.py](https://bootstrap.pypa.io/get-pip.py)
+2. Abre una terminal, accede a la carpeta que contiene el script `get-pip.py` y ejecuta el siguiente comando, según el sistema operativo utilizado.
+
+```bash
+# Windows
+C:> py get-pip.py
+# Linux / MacOS
+$ python get-pip.py
+```
+
+_Para más información sobre el script get-pip.py:_ [_https://github.com/pypa/get-pip_](https://github.com/pypa/get-pip)
+
+#### Métodos alternativos
+
+Existen métodos alternativos a los ya descritos, cuyo detalle puede consultarse en la documentación oficial de pip: [https://pip.pypa.io/en/stable/installation/](https://pip.pypa.io/en/stable/installation/)
+
+***
+
 ### Resumen del Capítulo
 
 Una instalación limpia y una correcta configuración del PATH son el punto de partida indispensable para cualquier desarrollador de Python. Hemos establecido que Python 3 es la única versión viable para el desarrollo moderno y hemos aprendido a instalarlo y verificarlo en los principales sistemas operativos, sentando una base sólida para todo lo que construiremos a continuación.
